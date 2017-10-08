@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
+var bcrypt = require('bcrypt');
 
 // SCHEMA FOR USER PROFILES
 var UserSchema = new Schema({
@@ -77,8 +78,34 @@ var UserSchema = new Schema({
   }],
 });
 
+// Authentication: Hash creation 
+UserSchema.pre('save', function saveUserHook(next) { 
+  const user = this;
+
+  if(!user.isModified('password')) return next();
+
+  return bcrypt.genSalt((saltError, salt) => {
+    if (saltError) { return next(saltError); } 
+
+    return bcrypt.hash(user.password, salt, (hashError, hash) => {
+      if (hashError) { return next(hashError); } 
+      
+      user.password = hash;
+
+      return next();
+    });
+  });
+});
+
 
 /* Custom Methods */
+
+//Compare passed password with value in database. 
+UserSchema.methods.comparePassword = function comparePassword(password, callback) { 
+  bycrypt.compare(password, this.password, callback);
+}
+
+
 
 // Our getFullName method
 UserSchema.methods.setFullName = function() {

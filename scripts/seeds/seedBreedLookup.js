@@ -13,7 +13,7 @@ mongoose.connect(
 
 //Seeding the breed collection with the breed recommendation (breed) for each search combination (breedId)
 
-const breedSeed = [
+const breedLookupSeed = [
   {
     breedId: 'smallhomelightcalm',
     breed: 'Chihuahua'
@@ -160,9 +160,9 @@ const breedSeed = [
   },
 ];
 
-db.Breed
+db.BreedLookup
 .remove({})
-.then(() => db.Breed.collection.insertMany(breedSeed))
+.then(() => db.BreedLookup.collection.insertMany(breedLookupSeed))
 .then(data => {
   console.log(data.insertedIds.length + " records inserted!");
   process.exit(0);

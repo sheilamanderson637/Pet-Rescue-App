@@ -1,5 +1,6 @@
 module.exports = {
-    Breed: require("./db/Breed"),  
+    BreedInfo: require("./db/BreedInfo"), 
+    BreedLookup: require("./db/BreedLookup"),  
     Pet: require("./db/Pet"),
     Questionnaire: require("./db/Questionnaire"),
     UserSearch: require("./db/UserSearch"),

@@ -1,3 +1,6 @@
+//This file seeds the database with questionnaires for different pet types using the Questionnaire model, 
+//which could help for scaling the app in the future to include more pet types.
+
 const mongoose = require("mongoose");
 const db = require("../../models");
 mongoose.Promise = global.Promise;

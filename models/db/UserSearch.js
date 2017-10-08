@@ -9,6 +9,6 @@ const UserSearchSchema = new Schema({
   dogEnergy: { type: String },
 });
 
-const Search = mongoose.model("UserSearch", UserSearchSchema);
+const UserSearch = mongoose.model("UserSearch", UserSearchSchema);
 
-module.exports = Search;
+module.exports = UserSearch;

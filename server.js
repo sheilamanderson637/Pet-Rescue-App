@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === "production") {
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+app.use(passport.initialize());
 
 // Send every request to the React app
 // Define any API routes before this runs

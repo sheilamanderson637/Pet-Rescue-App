@@ -3,6 +3,11 @@ const express = require('express');
 const router = require('express').Router(); 
 const apiRoutes = require('./api');
 const authRoutes = require('./auth');
+const authCheckMiddleware = require('../middleware/auth-check');
+
+
+router.use('/api', authCheckMiddleware);
+
 
 // router.use('/api', apiRoutes);
 // router.use('/auth', authRoutes);

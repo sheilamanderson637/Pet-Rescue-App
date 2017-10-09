@@ -111,51 +111,51 @@ const breedLookupSeed = [
     breed: 'Greyhound'
   },
   {
-    breedId: 'syesyes',
+    breedId: 'smallyesyes',
     breed: 'Bombay'
   },
   {
-    breedId: 'syesno',
+    breedId: 'smallyesno',
     breed: 'Russian Blue'
   },
   {
-    breedId: 'snono',
+    breedId: 'smallnono',
     breed: 'Persian'
   },
   {
-    breedId: 'snoyes',
+    breedId: 'smallnoyes',
     breed: 'Oriental'
   },
   {
-    breedId: 'myesyes',
+    breedId: 'mediumyesyes',
     breed: 'Siamese'
   },
   {
-    breedId: 'myesno',
+    breedId: 'mediumyesno',
     breed: 'Russian Blue'
   },
   {
-    breedId: 'mnono',
+    breedId: 'mediumnono',
     breed: 'Persian'
   },
   {
-    breedId: 'mnoyes',
+    breedId: 'mediumnoyes',
     breed: 'Turkish Van'
   },
   {
-    breedId: 'lyesyes',
+    breedId: 'largeyesyes',
     breed: 'Maine Coon'
   },
   {
-    breedId: 'lyesno',
+    breedId: 'largeyesno',
     breed: 'Russian Blue'
   },
   {
-    breedId: 'lnono',
+    breedId: 'largenono',
     breed: 'American Shorthair'
   },
   {
-    breedId: 'lnoyes',
+    breedId: 'largenoyes',
     breed: 'Manx'
   },
 ];

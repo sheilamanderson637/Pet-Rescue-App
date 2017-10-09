@@ -65,14 +65,14 @@ var UserSchema = new Schema({
   savedSearches: [{
     // Store ObjectIds in the array
     type: Schema.Types.ObjectId,
-    // The ObjectIds will refer to the ids in the Search model
+    // The ObjectIds will refer to the ids in the UserSearch model
     ref: "UserSearch"
   }],
   // savedPets: an array containing pets user has chosen to save
   savedPets: [{
     // Store ObjectIds in the array
     type: Schema.Types.ObjectId,
-    // The ObjectIds will refer to the ids in the Search model
+    // The ObjectIds will refer to the ids in the Pet model
     ref: "Pet"
   }],
 });

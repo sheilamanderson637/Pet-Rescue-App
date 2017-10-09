@@ -6,9 +6,9 @@ const Schema = mongoose.Schema;
 const QuestionnaireSchema = new Schema({
   petType: { type: String },
   items: [{
-    // Store ObjectIds in the array
+    // Store the question text string
     question: String,
-    // The ObjectIds will refer to the ids in the Search model
+    // Store the array of answer choices
     answers: { type: Array }
   }],
 });

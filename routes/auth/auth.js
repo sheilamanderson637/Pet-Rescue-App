@@ -1,6 +1,7 @@
 const express = require('express');
+const router = new express.Router(); 
 const validator = require('validator');
 const passport = require('passport');
 
-const router = new express.Router(); 
 
+module.exports = router; 

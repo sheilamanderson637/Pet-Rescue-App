@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import Input from "./components/Input";
-import SubmitButton from "./components/SubmitButton";
+// import SubmitButton from "./components/SubmitButton";
 // import { Container, Row, Col } from "./components/Grid";
 
 class RegistrationForm extends React.Component {
@@ -12,9 +12,12 @@ class RegistrationForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
   handleSubmit(event) {
     alert('A name was submitted: ' + this.state.value);

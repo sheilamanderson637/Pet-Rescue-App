@@ -25,6 +25,7 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "react-router-dom": "^4.2.2",
+    "request": "^2.83.0",
     "validator": "^9.0.0"
   }
 }

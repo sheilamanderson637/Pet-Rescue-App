@@ -14,7 +14,6 @@ router.post('/signup', (req, res, next) => {
         });
     }
 
-
     return passport.authenticate('local-signup', (err) => {
         if (err) {
         if (err.name === 'MongoError' && err.code === 11000) {
@@ -48,31 +47,29 @@ function validateSignupForm(payload) {
     let message = '';
 
     if (!payload || typeof payload.email !== 'string' || !validator.isEmail(payload.email)) {
-    isFormValid = false;
-    errors.email = 'Please provide a correct email address.';
+        isFormValid = false;
+        errors.email = 'Please provide a correct email address.';
     }
 
     if (!payload || typeof payload.password !== 'string' || payload.password.trim().length < 8) {
-    isFormValid = false;
-    errors.password = 'Password must have at least 8 characters.';
+        isFormValid = false;
+        errors.password = 'Password must have at least 8 characters.';
     }
 
     if (!payload || typeof payload.name !== 'string' || payload.name.trim().length === 0) {
-    isFormValid = false;
-    errors.name = 'Please provide your name.';
+        isFormValid = false;
+        errors.name = 'Please provide your name.';
     }
 
     if (!isFormValid) {
-    message = 'Check the form for errors.';
+        message = 'Check the form for errors.';
     }
 
     return {
-    success: isFormValid,
-    message,
-    errors
+        success: isFormValid,
+        message,
+        errors
     };
 }
-
-
 
 module.exports = router; 

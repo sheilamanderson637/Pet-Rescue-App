@@ -2,7 +2,6 @@ const path = require('path');
 const express = require('express');
 const router = require('express').Router(); 
 const apiRoutes = require('./api');
-const authRoutes = require('./auth');
 const authCheckMiddleware = require('../middleware/auth-check');
 
 

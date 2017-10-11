@@ -7,6 +7,17 @@ class RegistrationForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};
+    this.state = {firstName: ''};
+    this.state = {lastName: ''};
+    this.state = {address: ''};
+    this.state = {addressTwo: ''};
+    this.state = {city: ''};
+    this.state = {state: ''};
+    this.state = {zip: ''};
+    this.state = {phone: ''};
+    this.state = {email: ''};
+    this.state = {password: ''};
+    this.state = {confirmPassword: ''};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,47 +40,47 @@ class RegistrationForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           First Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" name="firstName" value={this.state.value} onChange={this.handleChange} />
         </label>
         <label>
           Last Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" name="lastName" value={this.state.value} onChange={this.handleChange} />
         </label>
         <label>
           Address:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" name="address" value={this.state.value} onChange={this.handleChange} />
         </label>
         <label>
           Address 2:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" name="addressTwo"value={this.state.value} onChange={this.handleChange} />
         </label>
         <label>
           City:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" name="city" value={this.state.value} onChange={this.handleChange} />
         </label>
         <label>
           State:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" name="state" value={this.state.value} onChange={this.handleChange} />
         </label>
         <label>
           Zip:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" name="zip" value={this.state.value} onChange={this.handleChange} />
         </label>
         <label>
           Phone:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" name="phone" value={this.state.value} onChange={this.handleChange} />
         </label>
         <label>
           Email:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" name="email" value={this.state.value} onChange={this.handleChange} />
         </label>
         <label>
           Password:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" name="password" value={this.state.value} onChange={this.handleChange} />
         </label>
         <label>
           Confirm Password:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" name="confirmPassword" value={this.state.value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />
       </form>

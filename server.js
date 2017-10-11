@@ -5,6 +5,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const appRoutes = require('./routes');
 const mongoose = require('mongoose');
+const passport = require('passport');
+const passportLocal = require('passport-local'); 
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -14,11 +16,16 @@ if (process.env.NODE_ENV === "production") {
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(passport.initialize());
+
+// pass the authenticaion checker middleware
 
 
 // Send every request to the React app
 // Define any API routes before this runs
-// app.use(appRoutes);
+app.use('/', appRoutes);
+
+
 
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB

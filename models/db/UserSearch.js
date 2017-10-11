@@ -2,13 +2,16 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const UserSearchSchema = new Schema({
-  dogSex: { type: String },
-  dogAge: { type: String },
-  dogSize: { type: String },
-  dogHair: { type: String },
-  dogEnergy: { type: String },
+  //petType: store the pet type the user selected for the search
+  petType: String,
+  preferences: [{
+    // Store the question id (the id in the html, e.g. dogAge, catAge, etc.)
+    questionId: String,
+    // Store the value (set in the html) of the user's answer
+    userChoice: String
+  }],
 });
 
-const Search = mongoose.model("UserSearch", UserSearchSchema);
+const UserSearch = mongoose.model("UserSearch", UserSearchSchema);
 
-module.exports = Search;
+module.exports = UserSearch;

@@ -13,7 +13,7 @@ mongoose.connect(
 
 //Seeding the breed collection with the breed recommendation (breed) for each search combination (breedId)
 
-const breedSeed = [
+const breedLookupSeed = [
   {
     breedId: 'smallhomelightcalm',
     breed: 'Chihuahua'
@@ -111,58 +111,58 @@ const breedSeed = [
     breed: 'Greyhound'
   },
   {
-    breedId: 'syesyes',
+    breedId: 'smallyesyes',
     breed: 'Bombay'
   },
   {
-    breedId: 'syesno',
+    breedId: 'smallyesno',
     breed: 'Russian Blue'
   },
   {
-    breedId: 'snono',
+    breedId: 'smallnono',
     breed: 'Persian'
   },
   {
-    breedId: 'snoyes',
+    breedId: 'smallnoyes',
     breed: 'Oriental'
   },
   {
-    breedId: 'myesyes',
+    breedId: 'mediumyesyes',
     breed: 'Siamese'
   },
   {
-    breedId: 'myesno',
+    breedId: 'mediumyesno',
     breed: 'Russian Blue'
   },
   {
-    breedId: 'mnono',
+    breedId: 'mediumnono',
     breed: 'Persian'
   },
   {
-    breedId: 'mnoyes',
+    breedId: 'mediumnoyes',
     breed: 'Turkish Van'
   },
   {
-    breedId: 'lyesyes',
+    breedId: 'largeyesyes',
     breed: 'Maine Coon'
   },
   {
-    breedId: 'lyesno',
+    breedId: 'largeyesno',
     breed: 'Russian Blue'
   },
   {
-    breedId: 'lnono',
+    breedId: 'largenono',
     breed: 'American Shorthair'
   },
   {
-    breedId: 'lnoyes',
+    breedId: 'largenoyes',
     breed: 'Manx'
   },
 ];
 
-db.Breed
+db.BreedLookup
 .remove({})
-.then(() => db.Breed.collection.insertMany(breedSeed))
+.then(() => db.BreedLookup.collection.insertMany(breedLookupSeed))
 .then(data => {
   console.log(data.insertedIds.length + " records inserted!");
   process.exit(0);

@@ -5,9 +5,17 @@ export default {
     registerUser: function (...user) { 
         console.log('in axios register mew user');
         console.log(user[0]);
-        console.log(user[0].firstname);
+        console.log(user[0].firstName);
         
-        return axios.post('/api/signup', user);
+        const newUser = { 
+            firstName: user[0].firstName,
+            lastName: user[0].lastName,
+            password: user[0].password,
+            email: user[0].email,
+            zip: user[0].zip
+        }
+
+        return axios.post('/api/signup', newUser);
     },
 
     getBreedMatch: function() {

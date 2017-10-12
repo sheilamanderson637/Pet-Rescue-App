@@ -38,8 +38,8 @@ class RegistrationForm extends Component {
     Appapi.registerUser(this.state);
   }
 
-  registerUser = () => { 
-    Appapi.registerUser(this.state)
+  registerUser = (data) => { 
+    Appapi.registerUser(data)
         .then(res => { 
             console.log(res);
             // this.setState({ results: res.data.response.docs}) 

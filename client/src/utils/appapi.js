@@ -3,7 +3,9 @@ import axios from 'axios';
 export default {
     
     registerUser: function (...user) { 
-        console.log(user);
+        console.log('in axios register mew user');
+        console.log(user[0]);
+        console.log(user[0].firstname);
         
         return axios.post('/api/signup', user);
     },

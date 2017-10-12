@@ -1,11 +1,11 @@
 const express = require('express');
 const router = require('express').Router(); 
+const petbreedController = require('../../controllers/petbreedController');
 
+router.route('/')
+    .get(petbreedController.findbreedMatch)
 
-router.get('/', function(req, res) { 
-    console.log('in pet breedmatch api route');
-    console.log(req.body);
-    res.statusMessage('time to get your matched breed');
-});
+router.route('/all')
+    .get(petbreedController.findallBreedlookups);
 
 module.exports = router;

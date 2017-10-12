@@ -1,10 +1,9 @@
 // const usersController = require('../../models'); 
 const express = require('express');
 const router = express.Router();
+const petbreedController = require('../../controllers/petbreedController');
 
-router.get('api/petbreedinfo', function(req, res) { 
-    if (err) return console.log(err); 
-    console.log(data);
-}); 
+router.route('/')
+    .get(petbreedController.findallBreedInfo);
 
 module.exports = router;

@@ -1,11 +1,13 @@
 const express = require('express');
-const router = require('express').Router(); 
-const breedMatchRoutes = ('./petbreedmatch'); 
-const petbreedRoutes = require('./petbreed');
+const router = express.Router(); 
+// const petBreedMatchRoutes = require('./petbreedmatch'); 
+// const petBreedinfoRoutes = require('./petbreedinfo');
 const userRoutes = require('./user');
+const authRoutes = require('./auth');
 
-// router.use('/breedmatch', breedMatchRoutes); 
+// router.use('/petbreedmatch', petBreedMatchRoutes); 
 // router.use('/petbreed', petbreedRoutes);
-// router.use('/user', userRoutes);
+router.use('/signup', authRoutes);
+router.use('/newuser', userRoutes);
 
 module.exports = router;

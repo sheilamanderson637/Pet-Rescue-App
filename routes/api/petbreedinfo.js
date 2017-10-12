@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', function(req, res) { 
+router.get('api/petbreedinfo', function(req, res) { 
     if (err) return console.log(err); 
     console.log(data);
 }); 

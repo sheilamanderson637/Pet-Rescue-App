@@ -1,10 +1,10 @@
 const express = require('express');
-const router = new express.Router(); 
+const router = express.Router(); 
 const validator = require('validator');
 const passport = require('passport');
 
 
-router.post('/signup', (req, res, next) => {
+router.post('/', (req, res, next) => {
     const validationResult = validateSignupForm(req.body);
     if (!validationResult.success) {
         return res.status(400).json({

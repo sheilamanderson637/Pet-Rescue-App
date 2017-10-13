@@ -1,4 +1,5 @@
-const User = require('mongoose').model('User');
+const mongoose = require('mongoose');
+const User = require('../models/db/User');
 const PassportLocalStrategy = require('passport-local').Strategy;
 
 // Reference w/ options: https://github.com/jaredhanson/passport-local
@@ -10,30 +11,29 @@ module.exports = new PassportLocalStrategy({
   passwordField: 'password',
   session: false,
   passReqToCallback: true
-}, (req, email, password, done) => { 
-
-    function (req, email, password, done) { 
+}, function (req, email, password, done) { 
     console.log('In Passport Login Local');
-    console.log(req);
+    console.log(req.body);
     console.log(email);
     console.log(password);
-    const userData = { 
-        email: email.trim(),
-        password: password.trim()
-    } 
-
-    console.log('in passport local sign up strategy');
-  const userData = {
+  
+    const userData = {
     email: email.trim(),
     password: password.trim(),
-    firstName: req.body.name.trim(),
-    lastName: req.body.name.trim()
+    firstName: req.body.firstName.trim(),
+    lastName: req.body.lastName.trim()
   };
 
-  const newUser = new User(userData);
-  newUser.save((err) => {
-    if (err) { return done(err); }
+  User.save((err, userData) => {
+    if (err) return console.error(err);
+  }).then(data => res.json(data))
+    .catch(err => res.status(422).json(err));
+//   const newUser = new User(userData);
+//   console.log('New User',newUser);  
+//   newUser.save((err) => {
+    
+//     if (err) { return done(err); }
 
-    return done(null);
-  });
+//     return done(null);
+//   });
 });

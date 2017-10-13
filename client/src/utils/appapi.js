@@ -15,7 +15,9 @@ export default {
             zip: user[0].zip
         }
 
-        return axios.post('/api/signup', newUser);
+        return axios.post('/api/signup', newUser)
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err.response));
     },
 
     getBreedMatch: function() {

@@ -26,6 +26,12 @@ app.use(passport.initialize());
 app.use('/', appRoutes);
 
 
+// load passport strategies
+const localSignupStrategy = require('./passport/passport-signup');
+const localLoginStrategy = require('./passport/passport-login');
+passport.use('local-signup', localSignupStrategy);
+passport.use('local-login', localLoginStrategy);
+
 
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB

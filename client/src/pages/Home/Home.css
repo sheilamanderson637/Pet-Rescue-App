@@ -10,3 +10,11 @@
 }
 
 .bord-box {box-sizing: border-box;}
+
+.disp-tabcell {display: table-cell;}
+.txt-algn-cntr {text-align: center;}
+.vert-algn-cntr {vertical-align: middle;}
+
+.marg-20 {margin: 20px;}
+
+.disp-inlineblock {display: inline-block;}

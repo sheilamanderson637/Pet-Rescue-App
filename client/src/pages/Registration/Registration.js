@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import Bootstrap from 'bootstrap';
+import Reactstrap from 'reactstrap';
 // import Input from "./components/Input";
 // import SubmitButton from "./components/SubmitButton";
 // import { Container, Row, Col } from "./components/Grid";
@@ -54,11 +55,11 @@ class RegistrationForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          First Name:
+        {/* <label>
+          User Name:
           <input type="text" name="username" value={this.state.value} 
           onChange={this.handleChange} />
-        </label>
+        </label> */}
         <label>
           First Name:
           <input type="text" name="firstName" value={this.state.value} 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Input, FormText, Label, Row, Container, Col } from 'reactstrap';
+import { Button, Form, FormGroup, Input, FormText, Label, Row, Container, Col, Jumbotron } from 'reactstrap';
 // import Input from "./components/Input";
 // import SubmitButton from "./components/SubmitButton";
 // import { Container, Row, Col } from "./components/Grid";
@@ -53,6 +53,10 @@ class RegistrationForm extends Component {
     return (
       <div>
       <Container>
+      <Jumbotron>
+        <h1>Let's get you registered</h1>
+        <p className="lead">Please fill out the form and we'll activate a profile, this way you can save an animal you're interested in adopting to easily find the dog or cat when you return</p>
+      </Jumbotron>  
       <Form onSubmit={this.handleSubmit}>  
         <Row> 
           <Col>          

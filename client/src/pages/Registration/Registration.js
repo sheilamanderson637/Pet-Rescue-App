@@ -1,7 +1,12 @@
 import React, { Component } from "react";
-// import SubmitButton from "./components/SubmitButton";
 
-class RegistrationForm extends React.Component {
+// import Input from "./components/Input";
+// import SubmitButton from "./components/SubmitButton";
+// import { Container, Row, Col } from "./components/Grid";
+import Appapi from '../../utils/appapi';
+
+
+class RegistrationForm extends Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};
@@ -26,12 +31,23 @@ class RegistrationForm extends React.Component {
     this.setState({
       [name]: value
     });
+    console.log(this.state);
   };
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
+    alert('A name was submitted: ' + this.state.firstName);
+    Appapi.registerUser(this.state);
   }
+
+  registerUser = (data) => { 
+    Appapi.registerUser(data)
+        .then(res => { 
+            console.log(res);
+            // this.setState({ results: res.data.response.docs}) 
+        }).catch(err => console.log(err));
+  };
+
 
   render() {
     return (

@@ -9,19 +9,21 @@ import Appapi from '../../utils/appapi';
 class RegistrationForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
-    this.state = {firstName: ''};
-    this.state = {lastName: ''};
-    this.state = {address: ''};
-    this.state = {addressTwo: ''};
-    this.state = {city: ''};
-    this.state = {state: ''};
-    this.state = {zip: ''};
-    this.state = {phone: ''};
-    this.state = {email: ''};
-    this.state = {password: ''};
-    this.state = {confirmPassword: ''};
+    this.state = {
+      username: '',
+      firstName: '',
+      lastName: '',
+      address: '',
+      addressTwo: '',
+      city: '',
+      state: '',
+      zip: '',
+      phone: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
 
+    }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -52,6 +54,11 @@ class RegistrationForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+        <label>
+          First Name:
+          <input type="text" name="username" value={this.state.value} 
+          onChange={this.handleChange} />
+        </label>
         <label>
           First Name:
           <input type="text" name="firstName" value={this.state.value} 

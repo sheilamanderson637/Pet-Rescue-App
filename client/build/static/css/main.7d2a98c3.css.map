@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AACA,kBAGE,UAAY,CAGd,KACE,cACA,UACA,YACA,qBAAuB","file":"static/css/main.7d2a98c3.css","sourcesContent":["/* Links */\na,\na:focus,\na:hover {\n  color: #fff;\n}\n\nbody {\n  margin: 0 auto;\n  padding: 0;\n  height: 100%;\n  background-color: #333;\n}\n\n\n\n\n// WEBPACK FOOTER //\n// ./src/index.css"],"sourceRoot":""}

@@ -10,9 +10,14 @@ export default {
         const newUser = { 
             firstName: user[0].firstName,
             lastName: user[0].lastName,
-            password: user[0].password,
+            address: user[0].address,
+            addressTwo: user[0].addressTwo,
+            city: user[0].city,
+            state: user[0].state,
+            zip: user[0].zip,
+            phone: user[0].phone,
             email: user[0].email,
-            zip: user[0].zip
+            password: user[0].password
         }
 
         return axios.post('/api/signup', newUser)

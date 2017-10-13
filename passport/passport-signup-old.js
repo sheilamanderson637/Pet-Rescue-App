@@ -1,15 +1,22 @@
-const mongoose =require('mongoose');
+const mongoose = require('mongoose');
 const User = require('../models/db/User');
 const PassportLocalStrategy = require('passport-local').Strategy;
 
-module.exports = new PassportLocalStrategy({ 
+// Reference w/ options: https://github.com/jaredhanson/passport-local
+/**
+ * Return the Passport Local Strategy object.
+ */
+
+module.exports = new PassportLocalStrategy({
     usernameField: 'email',
     passwordField: 'password',
-    passReqToCallback: true,
-    session: false
-  },
-  function(req, email, password, done) {
+    session: false,
+    passReqToCallback: true
+  }, (req, email, password, done) => {
+
+    // checking what is getting passed
     console.log('In Passport Login Local');
+    console.log(req.body);
     console.log(email);
     console.log(password);
 
@@ -22,16 +29,14 @@ module.exports = new PassportLocalStrategy({
         addressTwo: req.body.addressTwo.trim(),
         city: req.body.city.trim(),
         state: req.body.state.trim(),
-        zip: req.body.state.trim(),
+        zip: req.body.zip.trim(),
         phone: req.body.phone.trim()
     };
-
+  
     const newUser = new User(userData);
     newUser.save((err) => {
-      console.log('in new user save');
-      console.log(newUser);  
       if (err) { return done(err); }
-    
+  
       return done(null, newUser);
     });
-});
+  });

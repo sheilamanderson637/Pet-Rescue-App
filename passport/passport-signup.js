@@ -1,10 +1,12 @@
-const User = require('mongoose').model('User');
+const mongoose = require('mongoose');
+const User = require('../models/db/User');
 const PassportLocalStrategy = require('passport-local').Strategy;
 
 // Reference w/ options: https://github.com/jaredhanson/passport-local
 /**
  * Return the Passport Local Strategy object.
  */
+
 module.exports = new PassportLocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
@@ -33,7 +35,6 @@ module.exports = new PassportLocalStrategy({
   const newUser = new User(userData);
   newUser.save((err) => {
     if (err) { return done(err); }
-
     return done(null);
   });
 });

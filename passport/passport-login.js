@@ -1,11 +1,13 @@
 
-const User = require('mongoose').model('User');
+const mongoose = require('mongoose');
+const db = require('../models');
+
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-passport.use(new LocalStrategy(function(username, password, done) {
+passport.use(new LocalStrategy(function(email, password, done) {
     console.log('in passport-local use for login');
-    User.findOne({ username: username }, function (err, user) {
+    db.User.findOne({ email: email }, function (err, user) {
         
         if (err) { return done(err); }
         

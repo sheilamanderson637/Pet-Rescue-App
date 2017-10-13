@@ -13,20 +13,27 @@ module.exports = new PassportLocalStrategy({
   passReqToCallback: true
 }, function (req, email, password, done) { 
     console.log('In Passport Login Local');
-    console.log(req);
+    console.log(req.body);
     console.log(email);
-    console.log(password)
-  const userData = {
+    console.log(password);
+  
+    const userData = {
     email: email.trim(),
     password: password.trim(),
     firstName: req.body.firstName.trim(),
     lastName: req.body.lastName.trim()
   };
 
-  const newUser = new User(userData);
-  newUser.save((err) => {
-    if (err) { return done(err); }
+  User.save((err, userData) => {
+    if (err) return console.error(err);
+  }).then(data => res.json(data))
+    .catch(err => res.status(422).json(err));
+//   const newUser = new User(userData);
+//   console.log('New User',newUser);  
+//   newUser.save((err) => {
+    
+//     if (err) { return done(err); }
 
-    return done(null);
-  });
+//     return done(null);
+//   });
 });

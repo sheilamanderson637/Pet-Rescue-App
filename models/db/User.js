@@ -28,13 +28,13 @@ var UserSchema = new Schema({
     trim: true,
   },
   // city: a trimmed, required string
-  address: {
+  city: {
     type: String,
     trim: true,
     required: "City is Required"
   },
   // state: a trimmed, required string
-  address: {
+  state: {
     type: String,
     trim: true,
     required: "State is Required"

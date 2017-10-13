@@ -13,9 +13,9 @@ const App = () =>
       <Header component={Header} />
       <Switch>
         <Route exact path="/" component={Home} /> 
-        <Route component={NoMatch} />
-        <Route exact path='/' component={Hometemp} /> 
+        {/* <Route exact path='/' component={Hometemp} />  */}
         <Route exact path='/registration'  component={Registration}/>
+        <Route component={NoMatch} />
       </Switch>
       {/* <Footer component={Footer} /> */}
     </div>

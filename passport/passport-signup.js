@@ -5,6 +5,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy; 
 
 
+
 // Reference w/ options: https://github.com/jaredhanson/passport-local
 module.exports = new LocalStrategy({
         usernameField: 'email', 
@@ -54,3 +55,4 @@ module.exports = new LocalStrategy({
         });
     });
 }); 
+

@@ -16,30 +16,28 @@ var UserSchema = new Schema({
     trim: true,
     required: "Last Name is Required"
   },
-  // username: a trimmed, required string
-  // username: {
-  //   type: String,
-  //   trim: true,
-  //   required: "Username is Required"
-  // },
-  // password: a trimmed, required string that must be more than 6 chars
-  password: {
+  // address: a trimmed, required string
+  address: {
     type: String,
     trim: true,
-    required: "Password is Required",
-    validate: [
-      function(input) {
-        return input.length >= 6;
-      },
-      "Password should be longer."
-    ]
+    required: "Street address is Required"
   },
-  // email: a string that must match an email format and must be unique in the collection
-  email: {
+  // addressTwo: a trimmed string
+  addressTwo: {
     type: String,
-    unique: true,
-    required: "Email is required.",
-    match: [/.+\@.+\..+/, "Please enter a valid e-mail address"]
+    trim: true,
+  },
+  // city: a trimmed, required string
+  address: {
+    type: String,
+    trim: true,
+    required: "City is Required"
+  },
+  // state: a trimmed, required string
+  address: {
+    type: String,
+    trim: true,
+    required: "State is Required"
   },
   // zip: 
   zip: {
@@ -52,6 +50,37 @@ var UserSchema = new Schema({
       "Enter your 5-digit zip code."
     ]
   },
+  // phone: a required 10-digit phone number
+  phone: {
+    type: Number,
+    required: "Phone number is required.",
+    validate: [
+      function(input) {
+        return input.length = 10;
+      },
+      "Enter your 10-digit phone number."
+    ]
+  },
+  // email: a string that must match an email format and must be unique in the collection
+  email: {
+    type: String,
+    unique: true,
+    required: "Email is required.",
+    match: [/.+\@.+\..+/, "Please enter a valid e-mail address"]
+  },
+  // password: a trimmed, required string that must be more than 6 chars
+  password: {
+    type: String,
+    trim: true,
+    required: "Password is Required",
+    validate: [
+      function(input) {
+        return input.length >= 6;
+      },
+      "Password should be longer."
+    ]
+  },
+
   // userCreated: the current date
   userCreated: {
     type: Date,

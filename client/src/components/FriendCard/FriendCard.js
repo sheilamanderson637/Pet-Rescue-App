@@ -4,7 +4,7 @@ import Details from "./modal";
 
 const FriendCard = props => (
   <div className="card">
-    
+    <p>In Friend card (testing rendering on page)</p>
     <div className="img-container">
 
       <img alt={props.name} src={props.image} />

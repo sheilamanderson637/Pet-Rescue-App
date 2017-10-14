@@ -4,9 +4,9 @@ const router = express.Router();
 const petbreedController = require('../../controllers/petbreedController');
 
 router.route('/')
-    .get(petbreedController.breedInfoRecord);
+    .get(petbreedController.breedFactRecord);
 
 router.route('/all')
-    .get(petbreedController.findallBreedInfo);
+    .get(petbreedController.findallBreedFact);
 
 module.exports = router;

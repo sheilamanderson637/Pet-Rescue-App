@@ -3,6 +3,7 @@ a,
 a:focus,
 a:hover {
   color: #fff;
+  font-family: 'Quicksand', sans-serif;
 }
 
 body {
@@ -10,5 +11,9 @@ body {
   padding: 0;
   height: 100%;
   background-color: #333;
+  font-family: 'Quicksand', sans-serif;
 }
+
+
+
 

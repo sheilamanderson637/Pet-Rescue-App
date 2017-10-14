@@ -8,30 +8,30 @@ import catIcon from "../../cat-icon.png";
 
 const Home = () =>   
   <Container className="bord-box background">
-    <Row>
-			<Col xs="3"></Col>
-      <Col xs="auto"><img src={logo} className="" alt="Finding Fido" /></Col>
-      <Col xs="3"></Col>
-		</Row>
-		<Row>
-			<Col xs="3"></Col>
-      <Col xs="auto">Your one stop source for finding the rescue dog of your dreams! Take a short quiz to figure out the dogs best suited to your lifestyle and needs. Save your search results by creating an account.</Col>
-      <Col xs="3"></Col>
-		</Row>
-		<Row>
-			<Col xs="3"></Col>
-      <Col xs="auto">
-				<div className="bord-rad-2 disp-inlineblock marg-10">
-						<a href="/" className="navbar-brand"></a>
-				</div>
-				<div className="bord-rad-2 disp-inlineblock marg-10">
-					<a href="">
-						<button className="intro-button">Occasions</button>
-					</a>
-				</div>
+		<div className="logo-btn_Cont">
+			<Row>
+				<Col><img src={logo} className="logo" alt="Finding Fido" /></Col>
+			</Row>
+			<Row>
+				<Col>
+					<p className="text-pet">Which pet are you looking for?</p>
 				</Col>
-      <Col xs="3"></Col>
-		</Row>
+			</Row>
+			<Row>
+				<Col></Col>
+				<Col>
+					<div className="bord-rad-2 disp-inlineblock marg-10">
+						<a href="/"><img src={dogIcon} className="icon" alt="Dog Icon" /></a>
+					</div>
+				</Col>
+				<Col>
+					<div className="bord-rad-2 disp-inlineblock marg-10">
+						<a href="/"><img src={catIcon} className="icon" alt="Cat Icon" /></a>
+					</div>
+					</Col>
+				<Col></Col>
+			</Row>
+		</div>
 	</Container>
 
 	export default Home;

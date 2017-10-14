@@ -1,0 +1,21 @@
+.nav-logo {
+	width: 100%;
+	padding: 10px;
+}
+
+.nav {
+  color: #ffffff !important;
+  font-family: 'Quicksand', sans-serif;
+	font-size: 15px;
+}
+
+.drop-menu {
+	width: 300px !important;
+	font-family: 'Quicksand', sans-serif;
+	padding: 15px;
+}
+
+.register {
+	/* margin: 0 0 10px 0; */
+	float: right;
+}

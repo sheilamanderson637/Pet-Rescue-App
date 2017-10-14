@@ -1,6 +1,6 @@
 .background {
   display: table;
-  width: 100%;
+  width: 100% !important;
   height: 100vh;
   background: url(../../cat-and-dog.jpg) top center fixed;
   background-size: cover;
@@ -8,12 +8,35 @@
   margin: 0;
 }
 
+.icon {
+  width: 40%;
+}
+
+.logo {
+  width: 60%;
+  margin: 20px;
+}
+
+.logo-btn_Cont{
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* .text-intro {
+  margin: 20px 20%;
+  color: #ffffff;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+} */
+
+.text-pet {
+  margin: 45px 20% 20px 20%;
+  color: #ffffff;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 25px;
+}
+
 .bord-box {box-sizing: border-box;}
-
-.disp-tabcell {display: table-cell;}
-.txt-algn-cntr {text-align: center;}
-.vert-algn-cntr {vertical-align: middle;}
-
-.marg-20 {margin: 20px;}
 
 .disp-inlineblock {display: inline-block;}

@@ -1,5 +1,7 @@
 import React from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Collapse, Col, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, NavDropdown, DropdownToggle, DropdownMenu, DropdownItem, Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import "./Header.css";
+import logo from "../../finding-fido-logo-horizontal.svg";
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -7,39 +9,67 @@ export default class Example extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      dropdownOpen: false
     };
   }
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
+      dropdownOpen: !this.state.dropdownOpen
     });
   }
   render() {
     return (
       <div>
         <Navbar color="faded" light expand="md">
-          <NavbarBrand href="/">Finding Fido</NavbarBrand>
+          <NavbarBrand href="/"><img src={logo} alt="Finding Fido" className="nav-logo"/></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
 
             <Nav className="ml-auto" navbar>
                 
               <NavItem>
-                <NavLink href="/components/">Dogs</NavLink>
+                <NavLink href="../pages/DogQuestionnaire" className="nav">DOGS</NavLink>
               </NavItem>
 
               <NavItem>
-                <NavLink href="/components/">Cats</NavLink>
+                <NavLink href="../pages/CatQuestionnaire" className="nav">CATS</NavLink>
               </NavItem>
 
               <NavItem>
-                <NavLink href="/components/">Saved</NavLink>
+                <NavLink href="../pages/Saved" className="nav">SAVED</NavLink>
               </NavItem>
 
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">Login</NavLink>
-              </NavItem>
+              <NavDropdown className="nav" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+              <DropdownToggle nav caret className="nav">
+                LOGIN
+              </DropdownToggle>
+              <DropdownMenu className="drop-menu">
+                <Form>
+                  <FormGroup row>
+                    <Label for="exampleEmail" sm={2}>Email</Label>
+                    <Col sm={10}>
+                      <Input type="email" name="email" id="exampleEmail" placeholder="email" />
+                    </Col>
+                  </FormGroup>
+                  <FormGroup row>
+                    <Label for="examplePassword" sm={2}>Password</Label>
+                    <Col sm={10}>
+                      <Input type="password" name="password" id="examplePassword" placeholder="password" />
+                    </Col>
+                  </FormGroup>
+                  <div className="register">
+                    Register
+                  </div>
+                  <FormGroup check row>
+                    <Col sm={{ size: 10, offset: 2 }}>
+                      <Button color="warning" href="/">Submit</Button>
+                    </Col>
+                  </FormGroup>
+                </Form>
+              </DropdownMenu>
+            </NavDropdown>
 
             </Nav>
 

@@ -1,8 +1,6 @@
 import React from 'react'; 
 import Petfinder from '../utils/petfinderapi';
 
-
-
 let testObj = { 
     age: 'young',
     sex: 'male',
@@ -22,7 +20,7 @@ function getPetsToRescue(obj) {
 }
 
 
-// getPetsToRescue(testObj);
+//getPetsToRescue(testObj);
 
 const Hometemp = () => (
     <div className='container'>

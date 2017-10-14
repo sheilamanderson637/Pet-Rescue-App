@@ -2,15 +2,15 @@ const db = require("../models");
 
 module.exports = { 
     
-    findallBreedInfo: function(req, res) { 
-        db.BreedInfo
+    findallBreedFact: function(req, res) { 
+        db.BreedFact
             .find(req.query)
             .then(breeds => res.json(breeds))
             .catch(err => res.status(422).json(err));
     }, 
 
-    breedInfoRecord: function(req, res) { 
-        db.BreedInfo
+    breedFactRecord: function(req, res) { 
+        db.BreedFact
             .findOne(req.query)
             .then(breed => res.json(breed))
             .catch(err => res.status(422).json) 

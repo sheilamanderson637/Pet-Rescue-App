@@ -1,9 +1,13 @@
+.nav {
+	background-color: #333;
+}
+
 .nav-logo {
 	width: 100%;
 	padding: 10px;
 }
 
-.nav {
+.nav-link {
   color: #ffffff !important;
   font-family: 'Quicksand', sans-serif;
 	font-size: 15px;

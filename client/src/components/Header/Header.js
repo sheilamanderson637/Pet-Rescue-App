@@ -22,7 +22,7 @@ export default class Example extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="faded" light expand="md">
+        <Navbar color="faded" light expand="md" className="nav">
           <NavbarBrand href="/"><img src={logo} alt="Finding Fido" className="nav-logo"/></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -30,19 +30,19 @@ export default class Example extends React.Component {
             <Nav className="ml-auto" navbar>
                 
               <NavItem>
-                <NavLink href="../pages/DogQuestionnaire" className="nav">DOGS</NavLink>
+                <NavLink href="../pages/DogQuestionnaire" className="nav-link">DOGS</NavLink>
               </NavItem>
 
               <NavItem>
-                <NavLink href="../pages/CatQuestionnaire" className="nav">CATS</NavLink>
+                <NavLink href="../pages/CatQuestionnaire" className="nav-link">CATS</NavLink>
               </NavItem>
 
               <NavItem>
-                <NavLink href="../pages/Saved" className="nav">SAVED</NavLink>
+                <NavLink href="../pages/Saved" className="nav-link">SAVED</NavLink>
               </NavItem>
 
               <NavDropdown className="nav" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-              <DropdownToggle nav caret className="nav">
+              <DropdownToggle nav caret className="nav-link">
                 LOGIN
               </DropdownToggle>
               <DropdownMenu className="drop-menu">

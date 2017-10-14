@@ -22,7 +22,7 @@ module.exports = new PassportLocalStrategy({
         addressTwo: req.body.addressTwo.trim(),
         city: req.body.city.trim(),
         state: req.body.state.trim(),
-        zip: req.body.state.trim(),
+        zip: req.body.zip.trim(),
         phone: req.body.phone.trim()
     };
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class DogQuestionnaire extends React.Component {
+class Handler extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,5 +34,7 @@ class DogQuestionnaire extends React.Component {
       <div>{props.children}</div>
     ); 
   }
+
+}
 
 export default Handler;

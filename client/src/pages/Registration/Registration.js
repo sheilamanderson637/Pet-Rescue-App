@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Button, Form, FormGroup, Input, FormText, Label, Row, Container, Col, Jumbotron } from 'reactstrap';
 // import Input from "./components/Input";
 // import SubmitButton from "./components/SubmitButton";
 // import { Container, Row, Col } from "./components/Grid";
@@ -9,19 +9,20 @@ import Appapi from '../../utils/appapi';
 class RegistrationForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
-    this.state = {firstName: ''};
-    this.state = {lastName: ''};
-    this.state = {address: ''};
-    this.state = {addressTwo: ''};
-    this.state = {city: ''};
-    this.state = {state: ''};
-    this.state = {zip: ''};
-    this.state = {phone: ''};
-    this.state = {email: ''};
-    this.state = {password: ''};
-    this.state = {confirmPassword: ''};
-
+    this.state = {
+      firstName: '',
+      lastName: '',
+      address: '',
+      addressTwo: '',
+      city: '',
+      state: '',
+      zip: '',
+      phone: '',
+      email: '',
+      password: '',
+      confirmPassword: ''
+    }
+    
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -36,7 +37,7 @@ class RegistrationForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    alert('A name was submitted: ' + this.state.firstName);
+    alert('Processing new user with email: ' + this.state.firstName);
     Appapi.registerUser(this.state);
   }
 
@@ -51,64 +52,96 @@ class RegistrationForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          First Name:
-          <input type="text" name="firstName" value={this.state.value} 
-          onChange={this.handleChange} />
-        </label>
-        <label>
-          Last Name:
-          <input type="text" name="lastName" value={this.state.value} 
-          onChange={this.handleChange} />
-        </label>
-        <label>
-          Address:
-          <input type="text" name="address" value={this.state.value} 
-          onChange={this.handleChange} />
-        </label>
-        <label>
-          Address 2:
-          <input type="text" name="addressTwo"value={this.state.value} 
-          onChange={this.handleChange} />
-        </label>
-        <label>
-          City:
-          <input type="text" name="city" value={this.state.value} 
-          onChange={this.handleChange} />
-        </label>
-        <label>
-          State:
-          <input type="text" name="state" value={this.state.value} 
-          onChange={this.handleChange} />
-        </label>
-        <label>
-          Zip:
-          <input type="text" name="zip" value={this.state.value} 
-          onChange={this.handleChange} />
-        </label>
-        <label>
-          Phone:
-          <input type="text" name="phone" value={this.state.value} 
-          onChange={this.handleChange} />
-        </label>
-        <label>
-          Email:
-          <input type="text" name="email" value={this.state.value} 
-          onChange={this.handleChange} />
-        </label>
-        <label>
-          Password:
-          <input type="text" name="password" value={this.state.value} 
-          onChange={this.handleChange} />
-        </label>
-        <label>
-          Confirm Password:
-          <input type="text" name="confirmPassword" value={this.state.value} 
-          onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div>
+      <Container>
+      <Jumbotron>
+        <h1>Let's get you registered</h1>
+        <p className="lead">Please fill out the form and we'll activate a profile, this way you can save an animal you're interested in adopting to easily find the dog or cat when you return</p>
+      </Jumbotron>  
+      <Form onSubmit={this.handleSubmit}>  
+        <Row> 
+          <Col>          
+            <FormGroup>
+              <Label>First Name:</Label>
+                <Input type="text" name="firstName" value={this.state.value} onChange={this.handleChange} />
+            </FormGroup>
+          </Col>
+          <Col>
+            <FormGroup>
+              <Label>Last Name:</Label>
+              <Input type="text" name="lastName" value={this.state.value} onChange={this.handleChange} />
+            </FormGroup>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <FormGroup>
+              <Label>Address:</Label>
+              <Input type="text" name="address" value={this.state.value} onChange={this.handleChange} />
+            </FormGroup>
+          </Col>
+          <Col>
+            <FormGroup>
+              <Label>Address 2:</Label>
+              <Input type="text" name="addressTwo"value={this.state.value} onChange={this.handleChange} />
+            </FormGroup>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <FormGroup>
+              <Label>City:</Label>
+              <Input type="text" name="city" value={this.state.value} 
+              onChange={this.handleChange} />
+            </FormGroup>
+          </Col>
+          <Col>
+            <FormGroup>
+              <Label>State:</Label> 
+              <Input type="text" name="state" value={this.state.value} 
+              onChange={this.handleChange} />
+            </FormGroup>
+          </Col>
+          <Col>
+          <FormGroup>
+            <Label>Zip:</Label>
+            <Input type="text" name="zip" value={this.state.value} 
+              onChange={this.handleChange} />
+            </FormGroup>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Label>Phone:</Label>
+            <Input type="text" name="phone" value={this.state.value} 
+            onChange={this.handleChange} />
+          </Col>
+          <Col>
+            <Label>Email:</Label>
+            <Input type="text" name="email" value={this.state.value} 
+            onChange={this.handleChange} />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Label>Password:</Label>
+            <Input type="text" name="password" value={this.state.value} 
+            onChange={this.handleChange} />
+          </Col>
+          <Col>
+            <Label>Confirm Password:</Label>
+            <Input type="text" name="confirmPassword" value={this.state.value} 
+            onChange={this.handleChange} />
+          </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Button color="Warning" size="lg" block type="submit" value="Submit">Submit</Button>
+            </Col>
+          </Row>
+        </Form>
+      </Container>
+      </div>
     );
   }
 }

@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
-const User = require('../models')
+const User = require('../models/db/User')
 const jwtsecret = "a secret phrase!!";
 
 
 module.exports = function (req, res, next) { 
-
+  console.log('in auth check');
   if (!req.headers.authorization) { 
       return res.status(401).end();
   }

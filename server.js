@@ -19,12 +19,19 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 
 // pass the authenticaion checker middleware
-
+// const authCheckMiddleware = require('./middleware/auth-check');
+// app.use('/api', authCheckMiddleware);
 
 // Send every request to the React app
 // Define any API routes before this runs
 app.use('/', appRoutes);
 
+
+// load passport strategies
+const localSignupStrategy = require('./passport/passport-signup');
+const localLoginStrategy = require('./passport/passport-login');
+passport.use('local-signup', localSignupStrategy);
+passport.use('local-login', localLoginStrategy);
 
 
 mongoose.Promise = global.Promise;

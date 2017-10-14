@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-import Bootstrap from 'bootstrap';
-import Reactstrap from 'reactstrap';
-=======
 import { Button, Form, FormGroup, Input, FormText, Label, Row, Container, Col, Jumbotron } from 'reactstrap';
->>>>>>> master
 // import Input from "./components/Input";
 // import SubmitButton from "./components/SubmitButton";
 // import { Container, Row, Col } from "./components/Grid";

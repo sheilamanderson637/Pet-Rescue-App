@@ -1,4 +1,14 @@
 const express = require('express');
+const router = express.Router(); 
+const validator = require('validator');
+const passport = require('passport');
+// const passportLocal = require('../../passport/passport-signup');
+
+router.post('/', (req, res, next) => {
+    console.log('in Auth Signup Router')
+    console.log(req.body);
+    const validationResult = validateSignupForm(req.body);
+    console.log('validation result: ' + validationResult);
     if (!validationResult.success) {
         return res.status(400).json({
         success: false,
@@ -8,7 +18,7 @@ const express = require('express');
     }
 
     return passport.authenticate('local-signup', (err) => {
-
+        console.log('in return passport authenticate');
         if (err) {
         if (err.name === 'MongoError' && err.code === 11000) {
             // the 11000 Mongo code is for a duplication email error
@@ -36,7 +46,8 @@ const express = require('express');
 });
 
 function validateSignupForm(payload) {
-
+    console.log('in payload');
+    console.log(payload);
     const errors = {};
     let isFormValid = true;
     let message = '';
@@ -56,11 +67,11 @@ function validateSignupForm(payload) {
     //     errors.name = 'Please provide your name.';
     // }
 
-
     if (!isFormValid) {
         message = 'Check the form for errors.';
     }
-
+    console.log('===== valid form results ======');
+    console.log(errors, isFormValid, message);
     return {
         success: isFormValid,
         message,

@@ -3,10 +3,17 @@ import React, { Component } from "react";
 class DogQuestionnaire extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
-    this.state = {firstName: ''};
+    this.state = {
+      results = [],
+      dogform = { 
+        age: ''
+      }, 
+      catform: { 
+        age: ''
+      }
+    }
 
-this.handleChange = this.handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -23,7 +30,9 @@ this.handleChange = this.handleChange.bind(this);
   }
 
   render() {
-    return (
+    return ( 
+      <div>{props.children}</div>
+    ); 
   }
 
-export default DogQuestionnaire;
+export default Handler;

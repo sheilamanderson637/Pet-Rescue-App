@@ -28,13 +28,13 @@ var UserSchema = new Schema({
     trim: true,
   },
   // city: a trimmed, required string
-  address: {
+  city: {
     type: String,
     trim: true,
     required: "City is Required"
   },
   // state: a trimmed, required string
-  address: {
+  state: {
     type: String,
     trim: true,
     required: "State is Required"
@@ -109,6 +109,7 @@ var UserSchema = new Schema({
 
 // Authentication: Hash creation 
 UserSchema.pre('save', function saveUserHook(next) { 
+  console.log('in pre user schema');
   const user = this;
 
   if(!user.isModified('password')) return next();
@@ -117,10 +118,10 @@ UserSchema.pre('save', function saveUserHook(next) {
     if (saltError) { return next(saltError); } 
 
     return bcrypt.hash(user.password, salt, (hashError, hash) => {
+      console.log('in bcrypt hash');
       if (hashError) { return next(hashError); } 
       
       user.password = hash;
-
       return next();
     });
   });

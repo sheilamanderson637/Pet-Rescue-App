@@ -5,6 +5,7 @@ const passport = require('passport');
 // const passportLocal = require('../../passport/passport-signup');
 
 router.post('/', (req, res, next) => {
+
     console.log('in Auth Signup Router')
     console.log(req.body);
     const validationResult = validateSignupForm(req.body);
@@ -18,17 +19,17 @@ router.post('/', (req, res, next) => {
     }
 
     return passport.authenticate('local-signup', (err) => {
-        console.log('in return passport authenticate');
+        console.log(err);
         if (err) {
         if (err.name === 'MongoError' && err.code === 11000) {
             // the 11000 Mongo code is for a duplication email error
             // the 409 HTTP status code is for conflict error
             return res.status(409).json({
-            success: false,
-            message: 'Check the form for errors.',
-            errors: {
-                email: 'This email is already taken.'
-            }
+                success: false,
+                message: 'Check the form for errors.',
+                errors: {
+                    email: 'This email is already taken.'
+                }
             });
         }
 

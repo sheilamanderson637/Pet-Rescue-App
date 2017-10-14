@@ -1,29 +1,12 @@
 import React, { Component } from "react";
 
-class Handler extends React.Component {
+class DogQuestionnaire extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {value: ''};
+    this.state = {firstName: ''};
 
-    state = {
-        dogformvalues: {
-            sex: '',
-            age: '',
-            size: '',
-            home: '',
-            hair: '',
-            energy:''
-        },
-        catformvalues: {
-            sex: '',
-            age: '',
-            size: '',
-            friendly: '',
-            energy:''
-        },
-        results: []
-    }; 
-
-    this.handleChange = this.handleChange.bind(this);
+this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -35,7 +18,12 @@ class Handler extends React.Component {
   };
 
   handleSubmit(event) {
+    alert('The questionnaire was submitted: ' + this.state.value);
     event.preventDefault();
-  };
+  }
 
-  export default Handler;
+  render() {
+    return (
+  }
+
+export default DogQuestionnaire;

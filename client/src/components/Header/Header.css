@@ -1,9 +1,20 @@
+<<<<<<< HEAD
+=======
+.nav {
+	background-color: #333;
+}
+
+>>>>>>> master
 .nav-logo {
 	width: 100%;
 	padding: 10px;
 }
 
+<<<<<<< HEAD
 .nav {
+=======
+.nav-link {
+>>>>>>> master
   color: #ffffff !important;
   font-family: 'Quicksand', sans-serif;
 	font-size: 15px;

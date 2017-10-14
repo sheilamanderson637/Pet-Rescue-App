@@ -1,10 +1,14 @@
 .background {
   display: table;
+<<<<<<< HEAD
   width: 100% !important;
+=======
+  width: 100vh !important;
+>>>>>>> master
   height: 100vh;
   background: url(../../cat-and-dog.jpg) top center fixed;
   background-size: cover;
-  padding: 0 !important;
+  padding: 0;
   margin: 0;
 }
 
@@ -13,8 +17,12 @@
 }
 
 .logo {
+<<<<<<< HEAD
   width: 60%;
   margin: 20px;
+=======
+  height: 150px;
+>>>>>>> master
 }
 
 .logo-btn_Cont{

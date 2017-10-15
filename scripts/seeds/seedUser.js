@@ -20,7 +20,25 @@ const newUser = [
         zip: 62629,
         phone: 5556667777,
         email: 'homer@gmail.com',
-        password: 'password'
+        password: 'password',
+        savedSearches: [
+            { 
+                //run the seedUserSearch file
+                //open mongoDB
+                //open the UserSearch collection and cut and paste the objectID for the seeded
+                //UserSearch document into the "type" field below
+                type: '59e257c51af9e120f8f4efac',  
+                ref: 'Pet'
+            }],
+        savedPets: [
+            { 
+                //run the seedPet file
+                //open mongoDB
+                //open the UserSearch collection and cut and paste the objectID for the seeded
+                //Pet document into the "type" field below
+                type: '59e257bc817ee0096023cabc',
+                ref: 'Pet'
+            }],
     },
     {
         firstName: 'Al',

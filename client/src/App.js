@@ -6,6 +6,7 @@ import NoMatch from "./pages/NoMatch";
 import Hometemp from './components/temphome';
 import Registration from './pages/Registration';
 import Results from './pages/Results';
+import Account from "./pages/Account";
 // import Footer from "./components/Footer";
 
 const App = () =>
@@ -15,8 +16,8 @@ const App = () =>
       <Switch>
         <Route exact path="/" component={Home} /> 
         <Route exact path='/hometemp' component={Hometemp} /> 
-        <Route exact path='/registration' component={Registration}/>
-        <Route exact path='/results' component={Results}/>
+        <Route exact path='/registration'  component={Registration}/>
+        <Route exact path="/account" component={Account} />
         <Route component={NoMatch} />
       </Switch>
       {/* <Footer component={Footer} /> */}

@@ -7,6 +7,7 @@ import Hometemp from './components/temphome';
 import Registration from './pages/Registration';
 import Results from './pages/Resultstest';
 import DogQuestionnaire from './pages/DogQuestionnaire'
+import Account from "./pages/Account";
 // import Footer from "./components/Footer";
 
 const App = () =>
@@ -17,8 +18,8 @@ const App = () =>
         <Route exact path="/" component={Home} /> 
         <Route exact path='/hometemp' component={Hometemp} /> 
         <Route exact path='/registration' component={Registration}/>
-        <Route exact path='/results' component={Results}/>
         <Route exact path='/dogform' component={DogQuestionnaire}/>
+        <Route exact path="/account" component={Account} />
         <Route component={NoMatch} />
       </Switch>
       {/* <Footer component={Footer} /> */}

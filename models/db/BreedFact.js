@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 //SCHEMA FOR STORING THE BREED DATA FROM WOLFRAM API
 const BreedFactSchema = new Schema({
+  surveyBreedId: Array,
   animalType: String,
   breedName: String,
   breedDescription: String,

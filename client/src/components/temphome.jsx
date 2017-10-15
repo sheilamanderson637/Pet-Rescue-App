@@ -20,7 +20,7 @@ function getPetsToRescue(obj) {
 }
 
 
-//getPetsToRescue(testObj);
+// getPetsToRescue(testObj);
 
 const Hometemp = () => (
     <div className='container'>

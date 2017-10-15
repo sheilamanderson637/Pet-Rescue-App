@@ -1,6 +1,6 @@
 .background {
   display: table;
-  width: 100vh !important;
+  width: 100%;
   height: 100vh;
   background: url(../../cat-and-dog.jpg) top center fixed;
   background-size: cover;

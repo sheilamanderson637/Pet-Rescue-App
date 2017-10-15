@@ -3,7 +3,7 @@ const router = express.Router();
 const userController = require('../../controllers/userController');
 
 router.get('/', function(req, res) { 
-    console.log(req)
+    console.log(req);
     userController.findAll(req.body);
 
 });

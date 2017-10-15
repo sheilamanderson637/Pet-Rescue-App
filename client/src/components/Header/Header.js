@@ -36,15 +36,15 @@ export default class Example extends React.Component {
             <Nav className="ml-auto" navbar>
                 
               <NavItem>
-                <NavLink href="../pages/DogQuestionnaire" className="nav-link">DOGS</NavLink>
+                <NavLink href="/dog" className="nav-link">DOGS</NavLink>
               </NavItem>
 
               <NavItem>
-                <NavLink href="../pages/CatQuestionnaire" className="nav-link">CATS</NavLink>
+                <NavLink href="/cat" className="nav-link">CATS</NavLink>
               </NavItem>
 
               <NavItem>
-                <NavLink href="../pages/Saved" className="nav-link">ACCOUNT</NavLink>
+                <NavLink href="/account" className="nav-link">ACCOUNT</NavLink>
               </NavItem>
 
               <NavDropdown className="nav" isOpen={this.state.dropdownOpen} toggle={this.loginToggle}>
@@ -54,13 +54,13 @@ export default class Example extends React.Component {
               <DropdownMenu className="drop-menu">
                 <Form>
                   <FormGroup row>
-                    <Label for="exampleEmail" sm={2}>Email</Label>
+                    <Label for="email" sm={2}>Email</Label>
                     <Col sm={10}>
                       <Input type="email" name="email" id="exampleEmail" placeholder="email" />
                     </Col>
                   </FormGroup>
                   <FormGroup row>
-                    <Label for="examplePassword" sm={2}>Password</Label>
+                    <Label for="password" sm={2}>Password</Label>
                     <Col sm={10}>
                       <Input type="password" name="password" id="examplePassword" placeholder="password" />
                     </Col>

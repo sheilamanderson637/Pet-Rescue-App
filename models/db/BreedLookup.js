@@ -6,13 +6,12 @@ const BreedLookupSchema = new Schema({
   // breedId will be the concatenated values of respondent's survey questions
   breedId: String,
   breed: String,
-  // savedPets: an array containing pets user has chosen to save
-  breedDetails: [{
-    // Store ObjectIds in the array
+  // breedDetails: info about the breed brought in from the BreedFact model
+  breedDetails: {
     type: Schema.Types.ObjectId,
-    // The ObjectIds will refer to the ids in the BreedInfo model
-    ref: "BreedInfo"
-  }],  
+    // The ObjectIds will refer to the ids in the BreedFact model
+    ref: "BreedFact"
+  },  
 });
 
 const BreedLookup = mongoose.model("BreedLookup", BreedLookupSchema);

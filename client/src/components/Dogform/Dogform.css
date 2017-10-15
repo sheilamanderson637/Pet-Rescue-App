@@ -1,0 +1,19 @@
+.Container {
+    background-color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+}
+
+#submitbtn {
+    background-color: #FFC107;
+    float: left;
+    font-size: 15px;
+}
+
+.text-dogform {
+    font-size: 35px; 
+}
+
+.col-form-legend {
+   font-size: 25px; 
+}

@@ -15,10 +15,16 @@ export default class Example extends React.Component {
   }
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen,
+      isOpen: !this.state.isOpen
+    });
+  }
+
+  loginToggle() {
+    this.setState({
       dropdownOpen: !this.state.dropdownOpen
     });
   }
+
   render() {
     return (
       <div>
@@ -38,10 +44,10 @@ export default class Example extends React.Component {
               </NavItem>
 
               <NavItem>
-                <NavLink href="../pages/Saved" className="nav-link">SAVED</NavLink>
+                <NavLink href="../pages/Saved" className="nav-link">ACCOUNT</NavLink>
               </NavItem>
 
-              <NavDropdown className="nav" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+              <NavDropdown className="nav" isOpen={this.state.dropdownOpen} toggle={this.loginToggle}>
               <DropdownToggle nav caret className="nav-link">
                 LOGIN
               </DropdownToggle>

@@ -10,6 +10,7 @@ router.get('/get', function(req, res) {
     // console.log ( makePFQueryString(req.query)); 
     const petfinderapistr = makePFQueryString(req.query);
     request(petfinderapistr, function(error, response, body) { 
+        console.log(body);
         if (!error && response.statusCode === 200) {
            
             // console.log(JSON.parse(body).petfinder.pets);
@@ -75,7 +76,7 @@ const makePFQueryString = function(formObj) {
     + adjustSize()
     + "&location=" + formObj.zip 
     + "&output=full&format=json";   
-
+    console.log(petfinderBaseUrl);
     return petfinderBaseUrl; 
 } 
 

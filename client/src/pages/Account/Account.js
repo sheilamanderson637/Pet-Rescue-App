@@ -3,6 +3,7 @@ import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Ca
 import classnames from 'classnames';
 import "./Account.css";
 import Profile from "../../components/ProfileForm";
+import Saved from "../../components/Saved";
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -53,7 +54,7 @@ export default class Example extends React.Component {
           <TabPane tabId="2">
             <Row>
                 <Col sm="12">
-                <h4>Tab 2 Contents</h4>
+                <Saved />
               </Col>
             </Row>
           </TabPane>

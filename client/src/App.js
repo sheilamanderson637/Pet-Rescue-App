@@ -22,7 +22,6 @@ const App = () =>
         <Route exact path="/account" component={Account} />
         <Route component={NoMatch} />
       </Switch>
-      {/* <Footer component={Footer} /> */}
     </div>
   </Router>
 

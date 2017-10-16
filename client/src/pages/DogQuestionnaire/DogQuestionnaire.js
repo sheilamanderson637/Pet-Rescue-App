@@ -13,16 +13,19 @@ class DogQuestionnaire extends Component {
             doghair: '',
             dogsize: '',
             dogenergy: '',
-            doghome: '' 
+            doghome: '',
+            dogkeymatch: this.dogsize + this.doghome + this.doghair + this.energy,
+            petfinderResults: ''
         }
 
         this.handleChange = this.handleOptionChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-    handleSubmit = event => {
-        event.preventDefault(); 
-        console.log(this.state.selectedOption);
+    
+    handleSubmit(event) {
+        event.preventDefault();
+        alert('form submitted');
+        console.log(this.state);
     }
 
     handleOptionChange = event => {
@@ -31,22 +34,38 @@ class DogQuestionnaire extends Component {
             [name]: value
         });
         console.log(this.state);
-      };
-    
+      };    
 
     render() { 
        return(
         <div>
           <Container>  
             <Dogform 
-                dogsex={this.state.dogsex}
-                dogsize={this.state.dogsize} 
-                selectedOption={this.state}
                 handleOptionChange={this.handleOptionChange} 
-                submitForm={this.handleSubmit}
+                handleSubmit={this.handleSubmit}
                 />
-            {/* <FriendCard /> */}
             </Container>
+            {/* <Wrapper>
+            {this.state.petfinderResults.map(friend => (
+            <FriendCard
+                
+                id={friend.id}
+                key={friend.id}
+                name={friend.name}
+                image={friend.image}
+                gender={friend.gender}
+                location={friend.location}
+                age={friend.age}
+                size={friend.size}
+                description={friend.description}
+                address={friend.address}
+                zip={friend.zip}
+                details={friend}
+                phone={friend.phone}
+                email={friend.email}
+            />
+            ))}
+            </Wrapper> */}
         </div>
        );
     }

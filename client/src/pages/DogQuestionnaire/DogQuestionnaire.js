@@ -3,7 +3,7 @@ import { Container } from 'reactstrap'
 import Dogform from '../../components/Dogform'
 import Wrapper from '../../components/Wrapper'
 import FriendCard from '../../components/FriendCard'
-import PetfinderAPI from '../../'
+import PetfinderAPI from '../../utils/petfinderapi'
 
 class DogQuestionnaire extends Component { 
     

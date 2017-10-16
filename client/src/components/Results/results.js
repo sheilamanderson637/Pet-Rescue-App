@@ -1,24 +1,26 @@
-import react from 'react'; 
+import React from 'react'; 
 import FriendCard from '../FriendCard';
 
 
 const Results = props => { 
-    const petcard = props.petfinderResults.map((searchresult, index) => {
+    const petcards = props.petfinderResults.map((petcard, index) => {
         return(
         <div className='card my-2' key={index}>
             <div> 
-                {searchresult}
+                {petcard}
             </div>
         </div>
         );
     }); 
-
-    
     return ( 
-        <div> 
+        <div>
+            <h3>Rresults go here</h3> 
             {props.appResults}
-            {searchresults}
+            {petcards}
+            
         </div>
     );
 
 }
+
+export default Results;

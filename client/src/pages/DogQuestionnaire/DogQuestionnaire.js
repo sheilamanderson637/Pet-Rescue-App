@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Container } from 'reactstrap';
 import Dogform from '../../components/Dogform';
-import Wrapper from '../../components/Wrapper';
-import FriendCard from '../../components/FriendCard';
+// import Wrapper from '../../components/Wrapper';
+// import FriendCard from '../../components/FriendCard';
 import PetfinderAPI from '../../utils/petfinderapi';
 import AppAPI from '../../utils/appapi';
 import Results from '../../components/Results';
@@ -19,7 +19,7 @@ class DogQuestionnaire extends Component {
             doghome: '',
             dogkeymatch: '',
             zip:'',
-            petfinderResults: '',
+            petfinderResults: [],
             appResults: ''           
         }
 
@@ -52,7 +52,7 @@ class DogQuestionnaire extends Component {
                 console.log(`breed name ${res.data[0].breedName}`);
                 let breed = res.data[0].breedName 
                 this.getPetsToRescue(this.state, breed);
-                this.setState({ appResults: res.data[0] })
+                // this.setState({ appResults: res.data[0] })
             }).catch(err => console.log(err));
     }  
 
@@ -66,22 +66,6 @@ class DogQuestionnaire extends Component {
     }
 
     render() { 
-
-       
-        const searchresults = props.searchresults.map((searchresult) => {
-            return(
-            <div className='card my-2' key={searchresult._id}>
-                <div className='card-body' >
-                    <h2 className="headline">{searchresult.headline.main}</h2>
-                    <p className="summary">{searchresult.snippet}</p>
-                    <p><a className="articleURL" href={searchresult.web_url} target="_blank">{searchresult.web_url}</a></p>
-                    <Savebutton onClick={props.savearticle}>Save Article</Savebutton>
-                </div>
-            </div>
-            );
-        });
-     
-
        return(
         <div>
           <Container>  
@@ -90,12 +74,12 @@ class DogQuestionnaire extends Component {
                 handleSubmit={this.handleSubmit}
                 />
             </Container>
-            <Wrapper>
+            <div>
                 <Results 
                     appResults={this.state.appResults}
                     petfinderResults={this.state.petfinderResults}
                 />
-            </Wrapper>
+            </div>
         </div>
        );
     }

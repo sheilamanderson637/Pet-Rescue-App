@@ -63,6 +63,12 @@ return(
                 <option value='calm'>Calm</option>
                 </Input>
             </FormGroup>
+            {/* ZIP */}
+            <FormGroup>
+                <Label>Zip:</Label>
+                <Input type="text" name="zip" value={props.value} 
+                onChange={props.handleOptionChange} />
+            </FormGroup>
         <Button onSubmit={() => props.onSubmit} type='submit'>Submit </Button>
         </Form>  
     </div> 

@@ -10,14 +10,14 @@ export default {
                 age: formObj.dogage,
                 sex: formObj.dogsex,
                 size: formObj.dogsize, 
-                zip: formObj.dogzip,
+                zip: formObj.zip,
                 animaltype: 'dog',
                 breed: breed
             }
         }); 
     },
 
-    catSearch: function (formObj) { 
+    catSearch: function (formObj, breed) { 
         console.log('in axios petfinder proxy call');
         console.log(formObj);
         return axios.get('/api/petfinder/get', { 

@@ -29,7 +29,7 @@ const makePFQueryString = function(formObj) {
     // console.log(breed);
     
     if (formObj.breed.includes(" ")) { 
-        formObj.breed = breed.split(' ').join('+');
+        formObj.breed = formObjbreed.split(' ').join('+');
     }
 
     let adjustSex = function () {

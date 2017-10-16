@@ -26,7 +26,6 @@ class Resultstest extends Component {
 
 
 
-    
     componentDidMount() { 
         this.getPetsToRescue(this.state.testObj) 
         .then((res) => {

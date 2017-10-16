@@ -7,7 +7,7 @@ return(
         <Form onSubmit={props.handleSubmit}>
             {/* GENDER */}
             <FormGroup>
-                <Label htmlFor="dogsex">Dog Sex</Label>
+                <Label htmlFor="dogsex">What gender do you prefer for your dog?</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogsex' className="form-control" >
                 <option></option>
                 <option value='male'>Male</option>
@@ -17,7 +17,7 @@ return(
             </FormGroup>
             {/* AGE */}
             <FormGroup>
-                <Label htmlFor="dogage">Dog Age</Label>
+                <Label htmlFor="dogage">What age dog would you like?</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogage' className="form-control" >
                 <option></option>
                 <option value='puppy'>Puppy</option>
@@ -28,7 +28,7 @@ return(
             </FormGroup>
             {/* SIZE */}
             <FormGroup>
-                <Label htmlFor="dogsize">Dog Size</Label>
+                <Label htmlFor="dogsize">What size dog do you prefer?</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogsize' className="form-control" >
                 <option></option>
                 <option value='small'>Small</option>
@@ -38,28 +38,28 @@ return(
             </FormGroup>
             {/* HOUSING */}
             <FormGroup>
-                <Label htmlFor="doghome">Dog Home</Label>
+                <Label htmlFor="doghome">Where will your dog live?</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='doghome' className="form-control" >
                 <option></option>
-                <option value='home'>Home</option>
+                <option value='home'>House with a yard</option>
                 <option value='apartment'>Apartment/Condo</option>
                 </Input>
             </FormGroup>
             {/* SHEDDING */}
             <FormGroup>
-                <Label htmlFor="doghair">Dog Shedding</Label>
+                <Label htmlFor="doghair">Are you looking for a dog that is a light shedder or would you love any dog regardless?</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='doghair' className="form-control" >
                 <option></option>
-                <option value='light'>Light</option>
+                <option value='light'>Light Shedder</option>
                 <option value='any'>No Preference</option>
                 </Input>
             </FormGroup>
             {/* ENERGY */}
             <FormGroup>
-                <Label htmlFor="dogenergy">Dog Energy</Label>
+                <Label htmlFor="dogenergy">Do you want an energetic dog to play fetch with or would you like a calm dog to snuggle with on the sofa?</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogenergy' className="form-control" >
                 <option></option>
-                <option value='highenergy'>High</option>
+                <option value='highenergy'>Energetic</option>
                 <option value='calm'>Calm</option>
                 </Input>
             </FormGroup>

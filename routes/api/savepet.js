@@ -5,7 +5,6 @@ const userController = require('../../controllers/savedpetController');
 router.get('/', function(req, res) { 
     console.log(req);
     savedpetController.findAll(req.body);
-
 });
 
 module.exports = router

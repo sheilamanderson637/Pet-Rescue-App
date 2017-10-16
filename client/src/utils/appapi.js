@@ -24,47 +24,17 @@ export default {
             .then((res) => console.log(res))
             .catch((err) => console.log(err.response));
     },
-
-    // // Trying to create a save pet route
-    // savePet: function (...pet) { 
-    //     console.log('in axios save pet');
-    //     console.log(pet[0]);
-    //     console.log(pet[0].firstName);
-        
-    //     const newPet = { 
-    //         petType: '', //insert variable name of pet type from front end
-    //         petId: this.id.$t, //response.petfinder.pets.pet[i].id.$t,
-    //         name: this.name.$t, //response.petfinder.pets.pet[i].name.$t,
-    //         age: this.age.$t, //response.petfinder.pets.pet[i].age.$t,
-    //         city: this.contact.city.$t, //response.petfinder.pets.pet[i].contact.city.$t,
-    //         email: this.contact.email.$t, //response.petfinder.pets.pet[i].contact.email.$t,
-    //         sex: this.sex.$t, //response.petfinder.pets.pet[i].sex.$t,
-    //         size: this.size.$t, //response.petfinder.pets.pet[i].size.$t,
-    //         description: this.description.$t, //response.petfinder.pets.pet[i].description.$t,
-    //         image: this.media.photos.photo[3].$t //response.petfinder.pets.pet[i].media.photos.photo[3].$t,
-    //     },
-
-    //     // return axios.post('/api/savepet', newPet)
-    //     //     .then((res) => console.log(res))
-    //     //     .catch((err) => console.log(err.response));
-    // },
     
-    getBreedMatch: function() {
+    getBreedMatch: function(breedMatchVal) {
         console.log('in axios petbreedmatch');
-        return axios.get("/api/petbreedmatch");
+        console.log("breedmatch val: " + breedMatchVal);
+        return axios.get("/api/petbreedmatch", { 
+            params: { 
+                breedMatchVal: breedMatchVal
+            }
+        });
     },
-    // // Gets the book with the given id
-    // getBook: function(id) {
-    //   return axios.get("/api/books/" + id);
-    // },
-    // // Deletes the book with the given id
-    // deleteBook: function(id) {
-    //   return axios.delete("/api/books/" + id);
-    // },
-    // // Saves a book to the database
-    // saveBook: function(bookData) {
-    //   return axios.post("/api/books", bookData);
-    // }
+
 };
 
 /*

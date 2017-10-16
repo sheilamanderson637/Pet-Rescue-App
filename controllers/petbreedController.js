@@ -21,10 +21,15 @@ module.exports = {
     }, 
 
     breedFactRecord: function(req, res) { 
+        console.log('in breed fact record in controller');
+        console.log(req.query);
+        console.log(req.query.breedMatchVal);
         db.BreedFact
-            .findOne(req.query)
-            .then(breed => res.json(breed))
-            .catch(err => res.status(422).json) 
+            .find({surveyBreedId: req.query.breedMatchVal})
+            .then(breed => {
+                console.log("breed record", breed);    
+                res.json(breed); 
+            }).catch(err => res.status(422).json) 
     },
 
 }

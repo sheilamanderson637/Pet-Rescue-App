@@ -9,6 +9,7 @@ return(
             <FormGroup>
                 <Label htmlFor="dogsex">What gender do you prefer for your dog?</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogsex' className="form-control" >
+                <option></option>
                 <option value='male'>Male</option>
                 <option value='female'>Female</option>
                 <option value='any'>Any</option>
@@ -18,6 +19,7 @@ return(
             <FormGroup>
                 <Label htmlFor="dogage">What age dog would you like?</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogage' className="form-control" >
+                <option></option>
                 <option value='puppy'>Puppy</option>
                 <option value='young'>Young</option>
                 <option value='adult'>Adult</option>
@@ -28,6 +30,7 @@ return(
             <FormGroup>
                 <Label htmlFor="dogsize">What size dog do you prefer?</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogsize' className="form-control" >
+                <option></option>
                 <option value='small'>Small</option>
                 <option value='medium'>Medium</option>
                 <option value='large'>Large</option>
@@ -37,6 +40,7 @@ return(
             <FormGroup>
                 <Label htmlFor="doghome">Where will your dog live?</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='doghome' className="form-control" >
+                <option></option>
                 <option value='home'>House with a yard</option>
                 <option value='apartment'>Apartment/Condo</option>
                 </Input>
@@ -45,6 +49,7 @@ return(
             <FormGroup>
                 <Label htmlFor="doghair">Are you looking for a dog that is a light shedder or would you love any dog regardless?</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='doghair' className="form-control" >
+                <option></option>
                 <option value='light'>Light Shedder</option>
                 <option value='any'>No Preference</option>
                 </Input>
@@ -53,6 +58,7 @@ return(
             <FormGroup>
                 <Label htmlFor="dogenergy">Do you want an energetic dog to play fetch with or would you like a calm dog to snuggle with on the sofa?</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogenergy' className="form-control" >
+                <option></option>
                 <option value='highenergy'>Energetic</option>
                 <option value='calm'>Calm</option>
                 </Input>

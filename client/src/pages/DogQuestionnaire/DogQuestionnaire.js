@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { Container } from 'reactstrap'
-import Dogform from '../../components/Dogform'
-import Wrapper from '../../components/Wrapper'
-import FriendCard from '../../components/FriendCard'
-import PetfinderAPI from '../../utils/petfinderapi'
+import { Container } from 'reactstrap';
+import Dogform from '../../components/Dogform';
+import Wrapper from '../../components/Wrapper';
+import FriendCard from '../../components/FriendCard';
+import PetfinderAPI from '../../utils/petfinderapi';
+import AppAPI from '../../utils/appapi';
 
 class DogQuestionnaire extends Component { 
     
@@ -15,7 +16,7 @@ class DogQuestionnaire extends Component {
             dogsize: '',
             dogenergy: '',
             doghome: '',
-            dogkeymatch: this.dogsize + this.doghome + this.doghair + this.energy,
+            dogkeymatch: '',
             petfinderResults: ''
         }
 
@@ -25,8 +26,12 @@ class DogQuestionnaire extends Component {
     
     handleSubmit(event) {
         event.preventDefault();
-        alert('form submitted');
+        
         console.log(this.state);
+        let matchkey =  this.state.dogsize + this.state.doghome + this.state.doghair + this.state.dogenergy;
+        this.setState({dogkeymatch: matchkey});
+        console.log(`Key breed match ${this.state.dogkeymatch}`);
+        this.getBreedMatch(matchkey);
     }
 
     handleOptionChange = event => {
@@ -35,7 +40,26 @@ class DogQuestionnaire extends Component {
             [name]: value
         });
         console.log(this.state);
-      };    
+      }; 
+    
+    getBreedMatch(matchkey) { 
+        AppAPI.getBreedMatch(matchkey)
+            .then((res) => {
+                console.log(res);
+                console.log(`breed name ${res.data[0].breedName}`);
+                let breed = res.data[0].breedName 
+                this.getPetsToRescue(this.state, breed);
+            }).catch(err => console.log(err));
+    }  
+
+    getPetsToRescue(obj, breed) { 
+        console.log(obj);
+        PetfinderAPI.dogSearch(obj, breed)
+        .then((res) => {
+            console.log(res);
+            console.log(res.data.petfinder.pets.pet)
+        }).catch((err) => console.log(err));
+    }
 
     render() { 
        return(

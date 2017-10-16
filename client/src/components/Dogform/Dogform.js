@@ -9,6 +9,7 @@ return(
             <FormGroup>
                 <Label htmlFor="dogsex">Dog Sex</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogsex' className="form-control" >
+                <option></option>
                 <option value='male'>Male</option>
                 <option value='female'>Female</option>
                 <option value='any'>Any</option>
@@ -18,6 +19,7 @@ return(
             <FormGroup>
                 <Label htmlFor="dogage">Dog Age</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogage' className="form-control" >
+                <option></option>
                 <option value='puppy'>Puppy</option>
                 <option value='young'>Young</option>
                 <option value='adult'>Adult</option>
@@ -28,6 +30,7 @@ return(
             <FormGroup>
                 <Label htmlFor="dogsize">Dog Size</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogsize' className="form-control" >
+                <option></option>
                 <option value='small'>Small</option>
                 <option value='medium'>Medium</option>
                 <option value='large'>Large</option>
@@ -37,6 +40,7 @@ return(
             <FormGroup>
                 <Label htmlFor="doghome">Dog Home</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='doghome' className="form-control" >
+                <option></option>
                 <option value='home'>Home</option>
                 <option value='apartment'>Apartment/Condo</option>
                 </Input>
@@ -45,6 +49,7 @@ return(
             <FormGroup>
                 <Label htmlFor="doghair">Dog Shedding</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='doghair' className="form-control" >
+                <option></option>
                 <option value='light'>Light</option>
                 <option value='any'>No Preference</option>
                 </Input>
@@ -53,7 +58,8 @@ return(
             <FormGroup>
                 <Label htmlFor="dogenergy">Dog Energy</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogenergy' className="form-control" >
-                <option value='high'>High</option>
+                <option></option>
+                <option value='highenergy'>High</option>
                 <option value='calm'>Calm</option>
                 </Input>
             </FormGroup>

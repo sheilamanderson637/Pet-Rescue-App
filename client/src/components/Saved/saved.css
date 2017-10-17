@@ -1,0 +1,23 @@
+.send{
+	background-color: #FFC107;
+	margin-bottom: 5px;
+}
+
+
+.animalName {
+  font-size: 32px;
+  color: #FFC107;
+  text-shadow: 0 0 1px #070101;
+  margin-bottom: 10px;
+
+}
+
+Form {
+	margin-top: 20px;	
+}
+
+.animalPic { 
+   padding:1px;
+   border:3px solid #021a40;
+}
+

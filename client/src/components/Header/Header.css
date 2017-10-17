@@ -14,9 +14,12 @@
 }
 
 .drop-menu {
-	width: 500px !important;
+	width: 460px;
 	font-family: 'Quicksand', sans-serif;
 	padding: 15px !important;
+	/* left: auto;
+	right: 13px; */
+	overflow: visible;
 }
 
 .register {

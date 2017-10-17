@@ -10,9 +10,14 @@ export default class Example extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false,
+    };
+
+    this.loginToggle = this.loginToggle.bind(this);
+    this.state = {
       dropdownOpen: false
     };
   }
+  
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
@@ -48,34 +53,34 @@ export default class Example extends React.Component {
               </NavItem>
 
               <NavDropdown className="nav" isOpen={this.state.dropdownOpen} toggle={this.loginToggle}>
-              <DropdownToggle nav caret className="nav-link">
+                <DropdownToggle nav caret className="nav-link">
                 LOGIN
-              </DropdownToggle>
-              <DropdownMenu className="drop-menu">
-                <Form>
-                  <FormGroup row>
-                    <Label for="email" sm={2}>Email</Label>
-                    <Col sm={10}>
-                      <Input type="email" name="email" id="exampleEmail" placeholder="email" />
-                    </Col>
-                  </FormGroup>
-                  <FormGroup row>
-                    <Label for="password" sm={2}>Password</Label>
-                    <Col sm={10}>
-                      <Input type="password" name="password" id="examplePassword" placeholder="password" />
-                    </Col>
-                  </FormGroup>
-                  <div className="register">
-                    Register
-                  </div>
-                  <FormGroup check row>
-                    <Col sm={{ size: 10, offset: 2 }}>
-                      <Button color="warning" href="/">Submit</Button>
-                    </Col>
-                  </FormGroup>
-                </Form>
-              </DropdownMenu>
-            </NavDropdown>
+                </DropdownToggle>
+                <DropdownMenu className="drop-menu dropdown-menu-right">
+                  <Form>
+                    <FormGroup row>
+                      <Label for="email" sm={2}>Email</Label>
+                      <Col sm={10}>
+                        <Input type="email" name="email" id="exampleEmail" placeholder="email" />
+                      </Col>
+                    </FormGroup>
+                    <FormGroup row>
+                      <Label for="password" sm={2}>Password</Label>
+                      <Col sm={10}>
+                        <Input type="password" name="password" id="examplePassword" placeholder="password" />
+                      </Col>
+                    </FormGroup>
+                    <div className="register">
+                      Register
+                    </div>
+                    <FormGroup check row>
+                      <Col sm={{ size: 10, offset: 2 }}>
+                        <Button color="warning" href="/">Submit</Button>
+                      </Col>
+                    </FormGroup>
+                  </Form>
+                </DropdownMenu>
+              </NavDropdown>
 
             </Nav>
 

@@ -20,7 +20,7 @@ return(
                 <Label htmlFor="dogage">What age dog would you like?</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogage' className="form-control" >
                 <option></option>
-                <option value='puppy'>Puppy</option>
+                <option value='baby'>Puppy</option>
                 <option value='young'>Young</option>
                 <option value='adult'>Adult</option>
                 <option value='senior'>Senior</option>

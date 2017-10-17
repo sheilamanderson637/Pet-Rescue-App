@@ -8,6 +8,7 @@ const Results = props => {
     console.log(props.petfinderResults);
     let petcards;
     if (props.petfinderResults.length > 0) {
+        console.log('props array greater than 0');
         petcards = props.petfinderResults.map((petcard) => {
             return(
             <div className='card my-2' key={petcard}>
@@ -20,6 +21,7 @@ const Results = props => {
         });
 
     } else { 
+        console.log('props petfinder did not propogate in time');
         petcards = <h3>Uh oh, it appears no pets are available to rescue in the zipcode you submitted.</h3>;
     }
  

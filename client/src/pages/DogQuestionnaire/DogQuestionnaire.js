@@ -49,19 +49,13 @@ class DogQuestionnaire extends Component {
         console.log(this.state);
       }; 
     
-    componentShouldUpdate() { 
-        if (this.state.petfinderResults.length > 0) { 
-            return true
-        } else { 
-            return false
-        }
-    }
+
     
     getBreedMatch(matchkey) { 
         AppAPI.getBreedMatch(matchkey)
             .then((res) => {
-                console.log(res);
-                console.log(`breed name ${res.data[0].breedName}`);
+                // console.log(res);
+                // console.log(`breed name ${res.data[0].breedName}`);
                 this.setState({
                     breedName: res.data[0].breedName,
                     breedDescription: res.data[0].breedDescription,
@@ -78,7 +72,6 @@ class DogQuestionnaire extends Component {
         console.log(obj);
         PetfinderAPI.dogSearch(obj, breed)
         .then((res) => {
-            console.log(res);
             console.log(res.data.petfinder.pets.pet)
             this.setState({petfinderResults: res.data.petfinder.pets})
             console.log('=== petfinder state ===');
@@ -86,6 +79,23 @@ class DogQuestionnaire extends Component {
             this.setState({isVisible: true});
         }).catch((err) => console.log(err));
     }
+
+    
+    shouldComponentUpdate() { 
+        console.log('component should update if true')
+        if (this.state.petfinderResults.length > 0) { 
+            console.log('should update true');
+            return true
+        } else { 
+            console.log('should update false');
+            return false
+        }
+    } 
+
+    componentWillUpdate() {
+        console.log('component will update');
+    }
+
 
     render() { 
        return(

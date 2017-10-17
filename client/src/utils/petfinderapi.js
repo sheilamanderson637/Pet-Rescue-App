@@ -1,26 +1,44 @@
 import axios from 'axios';
 
+export default { 
+    
+    dogSearch: function (formObj, breed) { 
+        console.log('in axios petfinder proxy call');
+        console.log(formObj);
+        return axios.get('/api/petfinder/get', { 
+            params: { 
+                age: formObj.dogage,
+                sex: formObj.dogsex,
+                size: formObj.dogsize, 
+                zip: formObj.zip,
+                animaltype: 'dog',
+                breed: breed
+            }
+        }); 
+    },
 
-export default function petfinderApiCall(formObj) { 
-    console.log('in axios petfinder proxy call');
-    console.log(formObj);
-    return axios.get('/api/petfinder/get', { 
-        params: { 
-            age: formObj.age,
-            sex: formObj.sex,
-            size: formObj.size, 
-            zip: formObj.zip,
-            animaltype: formObj.animaltype,
-            breed: formObj.breed
-        }
-    }); 
+    catSearch: function (formObj, breed) { 
+        console.log('in axios petfinder proxy call');
+        console.log(formObj);
+        return axios.get('/api/petfinder/get', { 
+            params: { 
+                age: formObj.age,
+                sex: formObj.sex,
+                size: formObj.size, 
+                zip: formObj.zip,
+                animaltype: formObj.animaltype,
+                breed: formObj.breed
+            }
+        }); 
+    }
+}
+
+
     // const petfinderapistr = makePFQueryString(formObj, animaltype, breed);    
     // return jsonp(petfinderapistr, function (err, data) { 
     //     if (err) return console.log(err) 
     //     console.log(data);
     // });
-}
-
 // const makePFQueryString = function(formObj, animaltype, breed) { 
 //     console.log(formObj);
 //     console.log(animaltype); 
@@ -75,4 +93,4 @@ export default function petfinderApiCall(formObj) {
 //     + "&output=full&format=json";   
 
 //     return petfinderBaseUrl; 
-// } 
+//  

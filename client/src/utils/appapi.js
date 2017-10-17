@@ -3,7 +3,7 @@ import axios from 'axios';
 export default {
     
     registerUser: function (...user) { 
-        console.log('in axios register mew user');
+        console.log('in axios register new user');
         console.log(user[0]);
         console.log(user[0].firstName);
         
@@ -24,23 +24,17 @@ export default {
             .then((res) => console.log(res))
             .catch((err) => console.log(err.response));
     },
-
-    getBreedMatch: function() {
+    
+    getBreedMatch: function(breedMatchVal) {
         console.log('in axios petbreedmatch');
-        return axios.get("/api/petbreedmatch");
+        console.log("breedmatch val: " + breedMatchVal);
+        return axios.get("/api/petbreedmatch", { 
+            params: { 
+                breedMatchVal: breedMatchVal
+            }
+        });
     },
-    // // Gets the book with the given id
-    // getBook: function(id) {
-    //   return axios.get("/api/books/" + id);
-    // },
-    // // Deletes the book with the given id
-    // deleteBook: function(id) {
-    //   return axios.delete("/api/books/" + id);
-    // },
-    // // Saves a book to the database
-    // saveBook: function(bookData) {
-    //   return axios.post("/api/books", bookData);
-    // }
+
 };
 
 /*

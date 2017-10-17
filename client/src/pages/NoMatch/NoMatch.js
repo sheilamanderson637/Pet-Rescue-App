@@ -5,13 +5,14 @@ const NoMatch = () =>
   <Container fluid>
     <Row>
       <Col size="md-12">
+        <Jumbotron></Jumbotron>
         <Jumbotron>
-          <h1>404 Page Not Found</h1>
           <h1>
-            <span role="img" aria-label="Face With Rolling Eyes Emoji">
-              🙄
-            </span>
+            Oh no! It looks like we're in the dog house. 
           </h1>
+          <h4>
+            Please try a different link that works.
+          </h4>
         </Jumbotron>
       </Col>
     </Row>

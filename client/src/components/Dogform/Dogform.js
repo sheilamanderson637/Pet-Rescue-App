@@ -1,181 +1,92 @@
 import React from "react";
-import {FormGroup, Label, Input} from 'reactstrap';
+import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 
-const Dogform = props =>
-
-<form onSubmit={this.handleSubmit}>
-  
-  {/* GENDER   */}
-        <FormGroup tag="fieldset" row>
-            <legend className="col-form-legend col-sm-2">Gender</legend>
-                <Col sm={10}>
-                 <FormGroup check>
-                    <Label check>
-                     <Input type="radio" value="female" name="dog-sex" class="custom-control-input" 
-                        required checked={this.state.selectedOption === 'female'} 
-                        onChange={this.handleOptionChange} />
-                        Female
-                    </Label>
-                    </FormGroup>
-                    <FormGroup>
-                    <Label check>
-                     <Input type="radio" value="male" name="dog-sex" class="custom-control-input" 
-                        required checked={this.state.selectedOption === 'male'} 
-                        onChange={this.handleOptionChange} />
-                        Male
-                    </Label>
-                    </FormGroup>
-                    <FormGroup>
-                    <Label check>
-                     <Input type="radio" value="any" name="dog-sex" class="custom-control-input" 
-                        required checked={this.state.selectedOption === 'any'} 
-                        onChange={this.handleOptionChange} />
-                        No Preference
-                    </Label>
-                </FormGroup>
-            </Col>
-        </FormGroup>
-
- {/* AGE */}
-        <FormGroup tag="fieldset" row>
-            <legend className="col-form-legend col-sm-2">Age</legend>
-                <Col sm={10}>
-                 <FormGroup check>
-                    <Label check>
-                     <Input type="radio" value="puppy" name="dog-age" class="custom-control-input" 
-                        required checked={this.state.selectedOption === 'puppy'} 
-                        onChange={this.handleOptionChange} />
-                        Puppy
-                    </Label>
-                    </FormGroup>
-                    <FormGroup>
-                    <Label check>
-                     <Input type="radio" value="young" name="dog-age" class="custom-control-input" 
-                        required checked={this.state.selectedOption === 'young'} 
-                        onChange={this.handleOptionChange} />
-                        Young
-                    </Label>
-                    </FormGroup>
-                    <FormGroup>
-                    <Label check>
-                     <Input type="radio" value="adult" name="dog-age" class="custom-control-input" 
-                        required checked={this.state.selectedOption === 'adult'} 
-                        onChange={this.handleOptionChange} />
-                        Adult
-                    </Label>
-                    </FormGroup>
-                    <FormGroup>
-                    <Label check>
-                     <Input type="radio" value="senior" name="dog-age" class="custom-control-input" 
-                        required checked={this.state.selectedOption === 'senior'} 
-                        onChange={this.handleOptionChange} />
-                        Senior
-                    </Label>
-                </FormGroup>
-            </Col>
-        </FormGroup>
-
-{/* SIZE */}
-        <FormGroup tag="fieldset" row>
-            <legend className="col-form-legend col-sm-2">Size</legend>
-                <Col sm={10}>
-                 <FormGroup check>
-                    <Label check>
-                     <Input type="radio" value="small" name="dog-size" class="custom-control-input" 
-                        required checked={this.state.selectedOption === 'small'} 
-                        onChange={this.handleOptionChange} />
-                        Small
-                    </Label>
-                    </FormGroup>
-                    <FormGroup>
-                    <Label check>
-                     <Input type="radio" value="medium" name="dog-size" class="custom-control-input" 
-                        required checked={this.state.selectedOption === 'medium'} 
-                        onChange={this.handleOptionChange} />
-                        Medium
-                    </Label>
-                    </FormGroup>
-                    <FormGroup>
-                    <Label check>
-                     <Input type="radio" value="large" name="dog-size" class="custom-control-input" 
-                        required checked={this.state.selectedOption === 'large'} 
-                        onChange={this.handleOptionChange} />
-                        Large
-                    </Label>
-                </FormGroup>
-            </Col>
-        </FormGroup>
-
-{/* HOUSING */}
-        <FormGroup tag="fieldset" row>
-            <legend className="col-form-legend col-sm-2">Housing</legend>
-                <Col sm={10}>
-                 <FormGroup check>
-                    <Label check>
-                     <Input type="radio" value="home" name="dog-home" class="custom-control-input" 
-                        required checked={this.state.selectedOption === 'home'} 
-                        onChange={this.handleOptionChange} />
-                        Home
-                    </Label>
-                    </FormGroup>
-                    <FormGroup check>
-                    <Label check>
-                     <Input type="radio" value="apartment" name="dog-home" class="custom-control-input" 
-                        required checked={this.state.selectedOption === 'apartment'} 
-                        onChange={this.handleOptionChange} />
-                        Apartment/Condo
-                    </Label>
-                </FormGroup>
-            </Col>
-        </FormGroup>
-
-{/* SHEDDING */}
-        <FormGroup tag="fieldset" row>
-            <legend className="col-form-legend col-sm-2">Shedding</legend>
-                <Col sm={10}>
-                 <FormGroup check>
-                    <Label check>
-                     <Input type="radio" value="light" name="dog-hair" class="custom-control-input" 
-                        required checked={this.state.selectedOption === 'light'} 
-                        onChange={this.handleOptionChange} />
-                        Light
-                    </Label>
-                </FormGroup>
-                <FormGroup check>
-                    <Label check>
-                     <Input type="radio" value="any" name="dog-hair" class="custom-control-input" 
-                        required checked={this.state.selectedOption === 'any'} 
-                        onChange={this.handleOptionChange} />
-                        No Preference
-                    </Label>
-                </FormGroup>
-            </Col>
-        </FormGroup>
-
-{/* ENERGY */}
-        <FormGroup tag="fieldset" row>
-            <legend className="col-form-legend col-sm-2">Energy Level</legend>
-                <Col sm={10}>
-                 <FormGroup check>
-                    <Label check>
-                     <Input type="radio" value="highenergy" name="dog-energy" class="custom-control-input" 
-                        required checked={this.state.selectedOption === 'highenergy'} 
-                        onChange={this.handleOptionChange} />
-                        High
-                    </Label>
-                    </FormGroup>
-                    <FormGroup check>
-                    <Label check>
-                     <Input type="radio" value="calm" name="dog-energy" class="custom-control-input" 
-                        required checked={this.state.selectedOption === 'calm'} 
-                        onChange={this.handleOptionChange} />
-                        Calm
-                    </Label>
-                </FormGroup>
-            </Col>
-        </FormGroup>
-
-<button type="submit" id="submitbtn" class="btn btn-lg btn-warning">Submit</button>                   
- </form>
+const Dogform = props => { 
+return(
+    <div>
+        <Form onSubmit={props.handleSubmit}>
+            {/* GENDER */}
+            <FormGroup>
+                <Label htmlFor="dogsex">What gender do you prefer for your dog?</Label>
+                <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogsex' className="form-control" >
+                <option></option>
+                <option value='male'>Male</option>
+                <option value='female'>Female</option>
+                <option value='any'>Any</option>
+                </Input>
+            </FormGroup>
+            {/* AGE */}
+            <FormGroup>
+                <Label htmlFor="dogage">What age dog would you like?</Label>
+                <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogage' className="form-control" >
+                <option></option>
+                <option value='baby'>Puppy</option>
+                <option value='young'>Young</option>
+                <option value='adult'>Adult</option>
+                <option value='senior'>Senior</option>
+                </Input>
+            </FormGroup>
+            {/* SIZE */}
+            <FormGroup>
+                <Label htmlFor="dogsize">What size dog do you prefer?</Label>
+                <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogsize' className="form-control" >
+                <option></option>
+                <option value='small'>Small</option>
+                <option value='medium'>Medium</option>
+                <option value='large'>Large</option>
+                </Input>
+            </FormGroup>
+            {/* HOUSING */}
+            <FormGroup>
+                <Label htmlFor="doghome">Where will your dog live?</Label>
+                <Input type='select' value={props.value} onChange={props.handleOptionChange} name='doghome' className="form-control" >
+                <option></option>
+                <option value='home'>House with a yard</option>
+                <option value='apartment'>Apartment/Condo</option>
+                </Input>
+            </FormGroup>
+            {/* SHEDDING */}
+            <FormGroup>
+                <Label htmlFor="doghair">Are you looking for a dog that is a light shedder or would you love any dog regardless?</Label>
+                <Input type='select' value={props.value} onChange={props.handleOptionChange} name='doghair' className="form-control" >
+                <option></option>
+                <option value='light'>Light Shedder</option>
+                <option value='any'>No Preference</option>
+                </Input>
+            </FormGroup>
+            {/* ENERGY */}
+            <FormGroup>
+                <Label htmlFor="dogenergy">Do you want an energetic dog to play fetch with or would you like a calm dog to snuggle with on the sofa?</Label>
+                <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogenergy' className="form-control" >
+                <option></option>
+                <option value='highenergy'>Energetic</option>
+                <option value='calm'>Calm</option>
+                </Input>
+            </FormGroup>
+            {/* ZIP */}
+            <FormGroup>
+                <Label>Zip:</Label>
+                <Input type="text" name="zip" value={props.value} 
+                onChange={props.handleOptionChange} />
+            </FormGroup>
+        <Button onSubmit={() => props.onSubmit} type='submit'>Submit </Button>
+        </Form>  
+    </div> 
+    );
+}
 
 export default Dogform;
+
+{/* <div>
+<form onSubmit={props.handleSubmit}>
+<div className="form-group">
+    <label htmlFor="dogsex">Dog Sex</label>
+    <select value={props.value} onChange={props.handleOptionChange} name='dogsex' className="form-control" >
+    <option value='male'>Male</option>
+    <option value='female'>Female</option>
+    <option value='any'>Any</option>
+    </select>
+</div>
+    <button onSubmit={() => props.onSubmit} type='submit'>Submit </button>
+</form>  
+</div>  */}

@@ -3,9 +3,9 @@ const router = require('express').Router();
 const petbreedController = require('../../controllers/petbreedController');
 
 router.route('/')
-    .get(petbreedController.findbreedMatch);
+    .get(petbreedController.breedFactRecord);
 
-router.route('/all')
-    .get(petbreedController.findallBreedlookups);
+// router.route('/all')
+//     .get(petbreedController.findallBreedlookups);
 
 module.exports = router;

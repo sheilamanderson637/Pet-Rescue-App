@@ -6,18 +6,19 @@ const querystring = require('querystring');
 
 router.get('/get', function(req, res) { 
     console.log('in petfinder call');
-    console.log(req.query);
-    console.log ( makePFQueryString(req.query)); 
+    // console.log(req.query);
+    // console.log ( makePFQueryString(req.query)); 
     const petfinderapistr = makePFQueryString(req.query);
     request(petfinderapistr, function(error, response, body) { 
+        
         if (!error && response.statusCode === 200) {
            
-            console.log(JSON.parse(body).petfinder.pets);
+            // console.log(JSON.parse(body).petfinder.pets);
             // console.log("petfinder data: " + JSON.parse(body).petfinder.pets.pet[0].age.$t);
             // console.log("petfinder data: " + JSON.parse(body).petfinder.pets.pet[0].size.$t); 
 
             var results = JSON.parse(body); 
-            console.log(results);
+            // console.log(results);
             res.json(results);
         }
     });
@@ -29,7 +30,7 @@ const makePFQueryString = function(formObj) {
     // console.log(breed);
     
     if (formObj.breed.includes(" ")) { 
-        formObj.breed = breed.split(' ').join('+');
+        formObj.breed = formObj.breed.split(' ').join('+');
     }
 
     let adjustSex = function () {
@@ -75,7 +76,7 @@ const makePFQueryString = function(formObj) {
     + adjustSize()
     + "&location=" + formObj.zip 
     + "&output=full&format=json";   
-
+    console.log(petfinderBaseUrl);
     return petfinderBaseUrl; 
 } 
 

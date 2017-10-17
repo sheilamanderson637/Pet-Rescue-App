@@ -59,7 +59,7 @@ const questionnaireSeed = [
         answers: ['Baby', 'Young', 'Adult', 'Senior']
       },
       {
-        question: 'What size dog would you like?',
+        question: 'What size cat would you like?',
         answers: ['Small', 'Medium', 'Large']
       },
       {

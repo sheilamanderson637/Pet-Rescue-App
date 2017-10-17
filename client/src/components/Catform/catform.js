@@ -28,7 +28,7 @@ return(
             </FormGroup>
             {/* SIZE */}
             <FormGroup>
-                <Label htmlFor="catsize">What size dog do you prefer?</Label>
+                <Label htmlFor="catsize">What size cat do you prefer?</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='catsize' className="form-control" >
                 <option></option>
                 <option value='small'>Small</option>

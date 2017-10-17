@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Container } from 'reactstrap';
 import Dogform from '../../components/Dogform';
-import Wrapper from '../../components/Wrapper';
-import FriendCard from '../../components/FriendCard';
+// import Wrapper from '../../components/Wrapper';
+// import FriendCard from '../../components/FriendCard';
 import PetfinderAPI from '../../utils/petfinderapi';
 import AppAPI from '../../utils/appapi';
+import Results from '../../components/Results';
 
 class DogQuestionnaire extends Component { 
     
@@ -17,7 +18,9 @@ class DogQuestionnaire extends Component {
             dogenergy: '',
             doghome: '',
             dogkeymatch: '',
-            petfinderResults: ''
+            zip:'',
+            petfinderResults: [],
+            appResults: ''           
         }
 
         this.handleChange = this.handleOptionChange.bind(this);
@@ -49,6 +52,7 @@ class DogQuestionnaire extends Component {
                 console.log(`breed name ${res.data[0].breedName}`);
                 let breed = res.data[0].breedName 
                 this.getPetsToRescue(this.state, breed);
+                // this.setState({ appResults: res.data[0] })
             }).catch(err => console.log(err));
     }  
 
@@ -70,30 +74,35 @@ class DogQuestionnaire extends Component {
                 handleSubmit={this.handleSubmit}
                 />
             </Container>
-            {/* <Wrapper>
-            {this.state.petfinderResults.map(friend => (
-            <FriendCard
-                
-                id={friend.id}
-                key={friend.id}
-                name={friend.name}
-                image={friend.image}
-                gender={friend.gender}
-                location={friend.location}
-                age={friend.age}
-                size={friend.size}
-                description={friend.description}
-                address={friend.address}
-                zip={friend.zip}
-                details={friend}
-                phone={friend.phone}
-                email={friend.email}
-            />
-            ))}
-            </Wrapper> */}
+            <div>
+                <Results 
+                    appResults={this.state.appResults}
+                    petfinderResults={this.state.petfinderResults}
+                />
+            </div>
         </div>
        );
     }
 }
 
 export default DogQuestionnaire;
+
+// {this.state.petfinderResults.map(friend => (
+//     <FriendCard
+        
+//         id={friend.id}
+//         key={friend.id}
+//         name={friend.name}
+//         image={friend.image}
+//         gender={friend.gender}
+//         location={friend.location}
+//         age={friend.age}
+//         size={friend.size}
+//         description={friend.description}
+//         address={friend.address}
+//         zip={friend.zip}
+//         details={friend}
+//         phone={friend.phone}
+//         email={friend.email}
+//     />
+//     ))}

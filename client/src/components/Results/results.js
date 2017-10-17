@@ -27,7 +27,7 @@ const Results = props => {
  
     return ( 
         <div style={{marginTop: 20}}>
-            <Container>
+            {/* <Container>
             <Jumbotron>
                 <h2>BREED NAME: {props.breedName}</h2>
                 <p className='lead'>DESCRIPTION: {props.breedDescription}</p>
@@ -35,7 +35,7 @@ const Results = props => {
                 <p>TEMPERAMENT: {props.breedTemperament}</p>
                 <p>HISTORY: {props.breedHistory}</p>
             </Jumbotron>
-            </Container>
+            </Container> */}
             <Wrapper>
             {petcards}
             </Wrapper>

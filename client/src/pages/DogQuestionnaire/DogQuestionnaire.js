@@ -6,6 +6,7 @@ import Dogform from '../../components/Dogform';
 import PetfinderAPI from '../../utils/petfinderapi';
 import AppAPI from '../../utils/appapi';
 import Results from '../../components/Results';
+import Breedfact from '../../components/Breedfact';
 
 class DogQuestionnaire extends Component { 
     
@@ -24,7 +25,7 @@ class DogQuestionnaire extends Component {
             breedHistory: '',
             breedTemperament: '',           
             petfinderResults: [], 
-            isVisible: false
+            isBreedfactVisible: false
         }
 
         this.handleChange = this.handleOptionChange.bind(this);
@@ -64,7 +65,7 @@ class DogQuestionnaire extends Component {
                 });
                 let breed = res.data[0].breedName 
                 this.getPetsToRescue(this.state, breed);
-                // this.setState({ appResults: res.data[0] })
+                
             }).catch(err => console.log(err));
     }  
 
@@ -76,14 +77,13 @@ class DogQuestionnaire extends Component {
             this.setState({petfinderResults: res.data.petfinder.pets})
             console.log('=== petfinder state ===');
             console.log(this.state.petfinderResults);
-            this.setState({isVisible: true});
+            this.setState({isBreedfactVisible: true});
         }).catch((err) => console.log(err));
     }
 
-    
     shouldComponentUpdate() { 
         console.log('component should update if true')
-        if (this.state.petfinderResults.length > 0) { 
+        if (this.state.petfinderResults.length > 0 || this.state.breedName !== '') { 
             console.log('should update true');
             return true
         } else { 
@@ -96,6 +96,9 @@ class DogQuestionnaire extends Component {
         console.log('component will update');
     }
 
+    componentDidupdate() { 
+        console.log('component did update');
+    }
 
     render() { 
        return(
@@ -107,15 +110,18 @@ class DogQuestionnaire extends Component {
                 />
             </Container>
             <div> 
-                {!this.state.isVisible ? null : 
-                <Results 
+            {!this.state.isBreedfactVisible ? null : 
+                <Breedfact 
                     breedName={this.state.breedName}
                     breedDescription={this.state.breedDescription}
                     breedHistory={this.state.breedHistory}
                     breedTemperament={this.state.breedTemperament}  
+                />
+            }
+                <Results 
                     petfinderResults={this.state.petfinderResults}
                 />
-                }
+                
             </div>
         </div>
        );
@@ -123,6 +129,10 @@ class DogQuestionnaire extends Component {
 }
 
 export default DogQuestionnaire;
+
+
+// 
+
 
 // {this.state.petfinderResults.map(friend => (
 //     <FriendCard

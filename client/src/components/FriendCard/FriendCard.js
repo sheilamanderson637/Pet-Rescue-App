@@ -1,30 +1,40 @@
 import React from "react";
 import "./FriendCard.css";
 import Details from "./modal";
+import Imgsub from './subimgtest.png';
 
-const FriendCard = props => (
-  <div className="card">
-    
-    <div className="img-container">
+const FriendCard = props => {
+  let hasimg = () => {
+    if (props.image === 'no image available') { 
+      return false;
+    } else { 
+      return true
+    }
+  }
 
-      <img alt={props.name} src={props.image} />
-    </div>
-    <div className="content">
-     
-        <div className="animalName"><strong>{props.name}</strong></div>
-        <div><strong>Location:</strong> {props.location}</div>    
-        <div><strong>Age:</strong> {props.age}</div>
-        <div><strong>Gender:</strong> {props.gender}</div>  
-        <div><strong>Size:</strong> {props.size}</div>
+  return (
+    <div className="card">
       
-        <div className="details"> <Details details={props.details}></Details></div>
+      <div className="img-container">
+        
+        <img alt={props.name} src={ hasimg ? props.image : {Imgsub}} />
+      </div>
+      <div className="content">
+      
+          <div className="animalName"><strong>{props.name}</strong></div>
+          <div><strong>Location:</strong> {props.location}</div>    
+          <div><strong>Age:</strong> {props.age}</div>
+          <div><strong>Gender:</strong> {props.gender}</div>  
+          <div><strong>Size:</strong> {props.size}</div>
+        
+          <div className="details"> <Details details={props.details}></Details></div>
 
+      </div>
     </div>
-  </div>
 
-);
+  );
 
-
+}
 /*
 const FriendCard = props => (
 

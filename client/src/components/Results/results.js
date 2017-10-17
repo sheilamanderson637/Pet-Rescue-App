@@ -11,14 +11,25 @@ const Results = props => {
         console.log(petcards);
     }
 
-        petcards = props.petfinderResults.map((petcard) => {
+        petcards = props.petfinderResults.map((friend) => {
             return(
-            <div className='card my-2' key={petcard.id.$t}>
-                <div>
-                    <p>New Petcard</p> 
-                    <p>{petcard.description}</p>
-                </div>
-            </div>
+                <FriendCard
+                
+                id={friend.id}
+                key={friend.id}
+                name={friend.name}
+                image={friend.image}
+                gender={friend.gender}
+                location={friend.location}
+                age={friend.age}
+                size={friend.size}
+                description={friend.description}
+                address={friend.address}
+                zip={friend.zip}
+                details={friend}
+                phone={friend.phone}
+                email={friend.email}
+              />
             );
         });
 

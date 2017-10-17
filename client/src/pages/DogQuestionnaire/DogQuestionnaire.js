@@ -108,6 +108,7 @@ class DogQuestionnaire extends Component {
                 description: arr[i].description.$t,
                 id: arr[i].id.$t,
                 age:arr[i].age.$t,
+                gender: arr[i].sex.$t
                 // img: arr[i].media.photos.photo[0].$t
             }
             
@@ -116,8 +117,10 @@ class DogQuestionnaire extends Component {
             if(this.isEmpty(arr[i].media)) {
                 // Object is empty 
                 console.log('no image')
+                newPetObj.image = 'no image available';
+
             } else {
-                newPetObj.img = arr[i].media.photos.photo[0].$t
+                newPetObj.image = arr[i].media.photos.photo[0].$t
             }
 
 

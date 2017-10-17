@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Container } from 'reactstrap';
 import Dogform from '../../components/Dogform';
-// import Wrapper from '../../components/Wrapper';
+//import Wrapper from '../../components/Wrapper';
 // import FriendCard from '../../components/FriendCard';
 import PetfinderAPI from '../../utils/petfinderapi';
 import AppAPI from '../../utils/appapi';
@@ -18,9 +18,13 @@ class DogQuestionnaire extends Component {
             dogenergy: '',
             doghome: '',
             dogkeymatch: '',
-            zip:'',
-            petfinderResults: [],
-            appResults: ''           
+            zip: '',
+            breedName: '',
+            breedDescription: '',
+            breedHistory: '',
+            breedTemperament: '',           
+            petfinderResults: [], 
+            isVisible: false
         }
 
         this.handleChange = this.handleOptionChange.bind(this);
@@ -45,11 +49,25 @@ class DogQuestionnaire extends Component {
         console.log(this.state);
       }; 
     
+    componentShouldUpdate() { 
+        if (this.state.petfinderResults.length > 0) { 
+            return true
+        } else { 
+            return false
+        }
+    }
+    
     getBreedMatch(matchkey) { 
         AppAPI.getBreedMatch(matchkey)
             .then((res) => {
                 console.log(res);
                 console.log(`breed name ${res.data[0].breedName}`);
+                this.setState({
+                    breedName: res.data[0].breedName,
+                    breedDescription: res.data[0].breedDescription,
+                    breedHistory: res.data[0].breedHistory,
+                    breedTemperament: res.data[0].breedTemperament  
+                });
                 let breed = res.data[0].breedName 
                 this.getPetsToRescue(this.state, breed);
                 // this.setState({ appResults: res.data[0] })
@@ -62,6 +80,10 @@ class DogQuestionnaire extends Component {
         .then((res) => {
             console.log(res);
             console.log(res.data.petfinder.pets.pet)
+            this.setState({petfinderResults: res.data.petfinder.pets})
+            console.log('=== petfinder state ===');
+            console.log(this.state.petfinderResults);
+            this.setState({isVisible: true});
         }).catch((err) => console.log(err));
     }
 
@@ -74,11 +96,16 @@ class DogQuestionnaire extends Component {
                 handleSubmit={this.handleSubmit}
                 />
             </Container>
-            <div>
+            <div> 
+                {!this.state.isVisible ? null : 
                 <Results 
-                    appResults={this.state.appResults}
+                    breedName={this.state.breedName}
+                    breedDescription={this.state.breedDescription}
+                    breedHistory={this.state.breedHistory}
+                    breedTemperament={this.state.breedTemperament}  
                     petfinderResults={this.state.petfinderResults}
                 />
+                }
             </div>
         </div>
        );

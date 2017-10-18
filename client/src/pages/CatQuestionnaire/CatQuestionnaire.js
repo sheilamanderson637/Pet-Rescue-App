@@ -26,7 +26,8 @@ class CatQuestionnaire extends Component {
             breedTemperament: '',
             petfinderResults: [],
             isBreedfactVisible: false,
-            isResultsVisible: false          
+            isResultsVisible: false,
+            isFormVisible: true          
         }
 
         this.handleChange = this.handleOptionChange.bind(this);
@@ -79,7 +80,11 @@ class CatQuestionnaire extends Component {
             this.makePetArray(res.data.petfinder.pets.pet);
             console.log('=== petfinder state ===');
             console.log(this.state.petfinderResults);
-            this.setState({isBreedfactVisible: true, isResultsVisible: true});
+            this.setState({
+                isBreedfactVisible: true, 
+                isResultsVisible: true,
+                isFormVisible: false
+            });
         }).catch((err) => console.log(err));
     }
 
@@ -152,6 +157,7 @@ class CatQuestionnaire extends Component {
 
     componentDidupdate() { 
         console.log('component did update');
+        window.scrollTo(0, 0);
     }
 
 
@@ -159,13 +165,22 @@ class CatQuestionnaire extends Component {
     render() { 
        return(
         <div>
-          <Container>  
+          <Container>
+          {this.state.isFormVisible ?    
             <Catform 
                 handleOptionChange={this.handleOptionChange} 
                 handleSubmit={this.handleSubmit}
-                />
+                /> : null }
             </Container>
             <div>
+            {!this.state.isBreedfactVisible ? null : 
+                <Breedfact 
+                    breedName={this.state.breedName}
+                    breedDescription={this.state.breedDescription}
+                    breedHistory={this.state.breedHistory}
+                    breedTemperament={this.state.breedTemperament}  
+                />
+            }
                 <Results 
                     appResults={this.state.appResults}
                     petfinderResults={this.state.petfinderResults}
@@ -177,23 +192,3 @@ class CatQuestionnaire extends Component {
 }
 
 export default CatQuestionnaire;
-
-// {this.state.petfinderResults.map(friend => (
-//     <FriendCard
-        
-//         id={friend.id}
-//         key={friend.id}
-//         name={friend.name}
-//         image={friend.image}
-//         gender={friend.gender}
-//         location={friend.location}
-//         age={friend.age}
-//         size={friend.size}
-//         description={friend.description}
-//         address={friend.address}
-//         zip={friend.zip}
-//         details={friend}
-//         phone={friend.phone}
-//         email={friend.email}
-//     />
-//     ))}

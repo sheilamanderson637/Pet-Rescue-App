@@ -1,0 +1,12 @@
+
+.breedName{ 
+    font-size: 32px;
+    color: #FFC107;
+    text-align: center;
+    text-shadow: 0 0 1px #070101;
+}
+.breedBox{
+    border-style: solid;
+    border-color: #FFC107;
+    border-width: 1px;
+}

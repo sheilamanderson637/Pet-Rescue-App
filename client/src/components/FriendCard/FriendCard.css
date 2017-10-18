@@ -37,7 +37,7 @@
 }
 
 
-.animalName {
+.animalNameCenter {
   font-size: 32px;
   color: #FFC107;
   text-align: center;
@@ -69,4 +69,5 @@ Button {
 .map { 
   width: 100%;
   height: 150px;
+
 }

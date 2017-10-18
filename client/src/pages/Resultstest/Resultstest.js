@@ -72,7 +72,7 @@ class Resultstest extends Component {
             id={friend.id.$t}
             key={friend.id.$t}
             name={friend.name.$t}
-            image={friend.media.photos.photo[0].$t}
+            image={friend.media.photos.photo[3].$t}
             gender={friend.sex.$t}
             location={friend.contact.city.$t}
             age={friend.age.$t}

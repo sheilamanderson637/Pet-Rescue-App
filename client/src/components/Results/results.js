@@ -20,7 +20,7 @@ const Results = props => {
                 name={friend.name}
                 image={friend.image}
                 gender={friend.gender}
-                location={friend.location}
+                city={friend.city}
                 age={friend.age}
                 size={friend.size}
                 description={friend.description}

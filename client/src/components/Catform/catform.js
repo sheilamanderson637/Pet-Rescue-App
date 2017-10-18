@@ -57,7 +57,7 @@ return(
             </FormGroup>
             {/* ZIP */}
             <FormGroup>
-                <Label>Please provide your home zip code to search for available dogs in your area.</Label>
+                <Label>Please provide your home zip code to search for available cats in your area.</Label>
                 <Input type="text" name="zip" value={props.value} 
                 onChange={props.handleOptionChange} />
             </FormGroup>

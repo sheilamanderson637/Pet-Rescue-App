@@ -9,7 +9,7 @@ import Results from './pages/Resultstest';
 import DogQuestionnaire from './pages/DogQuestionnaire';
 import CatQuestionnaire from './pages/CatQuestionnaire';
 import Account from "./pages/Account";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 
 const App = () =>
   <Router>
@@ -24,6 +24,7 @@ const App = () =>
         <Route exact path="/account" component={Account} />
         <Route component={NoMatch} />
       </Switch>
+      <Footer component={Footer} />
     </div>
   </Router>
 

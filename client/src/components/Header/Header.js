@@ -41,11 +41,11 @@ export default class Example extends React.Component {
             <Nav className="ml-auto" navbar>
                 
               <NavItem>
-                <NavLink href="/dog" className="nav-link">DOGS</NavLink>
+                <NavLink href="/Dogform" className="nav-link">DOGS</NavLink>
               </NavItem>
 
               <NavItem>
-                <NavLink href="/cat" className="nav-link">CATS</NavLink>
+                <NavLink href="/Catform" className="nav-link">CATS</NavLink>
               </NavItem>
 
               <NavItem>

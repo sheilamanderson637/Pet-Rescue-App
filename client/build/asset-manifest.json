@@ -1,6 +1,10 @@
 {
-  "main.css": "static/css/main.7d2a98c3.css",
-  "main.css.map": "static/css/main.7d2a98c3.css.map",
-  "main.js": "static/js/main.2c5c940c.js",
-  "main.js.map": "static/js/main.2c5c940c.js.map"
+  "main.css": "static/css/main.5b40820b.css",
+  "main.css.map": "static/css/main.5b40820b.css.map",
+  "main.js": "static/js/main.f8fc33c1.js",
+  "main.js.map": "static/js/main.f8fc33c1.js.map",
+  "static\\media\\cat-and-dog.jpg": "static/media/cat-and-dog.0a531e3d.jpg",
+  "static\\media\\finding-fido-logo-horizontal.svg": "static/media/finding-fido-logo-horizontal.af57434b.svg",
+  "static\\media\\finding-fido-logo.svg": "static/media/finding-fido-logo.97397df6.svg",
+  "static\\media\\subimgtest.png": "static/media/subimgtest.3357520f.png"
 }

@@ -73,7 +73,7 @@ class CatQuestionnaire extends Component {
         console.log(obj);
         PetfinderAPI.catSearch(obj, breed)
         .then((res) => {
-            console.log(res.data.petfinder.pets.pet);
+            console.log(res.data.petfinder);
             let ispetArr = Array.isArray(res.data.petfinder.pets.pet); 
             let pets = res.data.petfinder.pets.pet;
             this.makePetArray(res.data.petfinder.pets.pet);

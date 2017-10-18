@@ -98,6 +98,7 @@ class DogQuestionnaire extends Component {
             let newPetObj = { 
                 name:arr[i].name.$t,
                 age:arr[i].age.$t,
+                size:arr[i].size.$t,                
                 animal:arr[i].animal.$t,
                 address:arr[i].contact.address1.$t,
                 city: arr[i].contact.city.$t,
@@ -120,7 +121,7 @@ class DogQuestionnaire extends Component {
                 newPetObj.image = 'no image available';
 
             } else {
-                newPetObj.image = arr[i].media.photos.photo[0].$t
+                newPetObj.image = arr[i].media.photos.photo[3].$t
             }
 
 

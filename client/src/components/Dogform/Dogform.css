@@ -1,14 +1,18 @@
+.div {
+    padding-top: 20px;
+
+}
+
+.input {
+    font-family: 'Quicksand', sans-serif !important;
+    font-size: 20px !important;
+}
+
 .form-group {
     font-family: 'Quicksand', sans-serif;
     font-size: 20px;
-}
+} 
 
 .button {
-    background-color: #ffc107 !important;
     width: 100px !important;
-}
-
-.form-control {
-    font-family: 'Quicksand', sans-serif !important;
-    font-size: 15px !important;
-}
+};

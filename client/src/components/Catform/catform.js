@@ -4,7 +4,7 @@ import "./Catform.css";
 
 const Catform = props => { 
 return(
-    <div>
+    <div className="div">
         <Form onSubmit={props.handleSubmit}>
             {/* GENDER */}
             <FormGroup>

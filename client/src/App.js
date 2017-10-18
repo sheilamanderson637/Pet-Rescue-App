@@ -17,7 +17,6 @@ const App = () =>
       <Header component={Header} />
       <Switch>
         <Route exact path="/" component={Home} /> 
-        <Route exact path='/hometemp' component={Hometemp} /> 
         <Route exact path='/registration' component={Registration}/>
         <Route exact path='/dogform' component={DogQuestionnaire}/>
         <Route exact path='/catform' component={CatQuestionnaire}/>

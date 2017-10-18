@@ -1,19 +1,14 @@
-.Container {
-    background-color: #ffffff;
+.form-group {
     font-family: 'Quicksand', sans-serif;
-    font-size: 15px;
+    font-size: 20px;
 }
 
-#submitbtn {
-    background-color: #FFC107;
-    float: left;
-    font-size: 15px;
+.button {
+    background-color: #ffc107 !important;
+    width: 100px !important;
 }
 
-.text-dogform {
-    font-size: 35px; 
-}
-
-.col-form-legend {
-   font-size: 25px; 
+.form-control {
+    font-family: 'Quicksand', sans-serif !important;
+    font-size: 15px !important;
 }

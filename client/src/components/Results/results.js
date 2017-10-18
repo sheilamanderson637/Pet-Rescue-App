@@ -1,28 +1,5 @@
 import React from 'react'; 
 import FriendCard from '../FriendCard';
-<<<<<<< HEAD
-
-
-const Results = props => { 
-    const petcards = props.petfinderResults.map((petcard, index) => {
-        return(
-        <div className='card my-2' key={index}>
-            <div> 
-                {petcard}
-            </div>
-        </div>
-        );
-    }); 
-    return ( 
-        <div>
-            <h3>Rresults go here</h3> 
-            {props.appResults}
-            {petcards}
-            
-        </div>
-    );
-
-=======
 import Wrapper from '../../components/Wrapper';
 
 
@@ -57,7 +34,6 @@ const Results = props => {
             </Wrapper>
         </div>
     );
->>>>>>> master
 }
 
 export default Results;

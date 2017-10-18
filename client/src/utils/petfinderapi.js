@@ -22,12 +22,12 @@ export default {
         console.log(formObj);
         return axios.get('/api/petfinder/get', { 
             params: { 
-                age: formObj.age,
-                sex: formObj.sex,
-                size: formObj.size, 
+                age: formObj.catage,
+                sex: formObj.catsex,
+                size: formObj.catsize, 
                 zip: formObj.zip,
-                animaltype: formObj.animaltype,
-                breed: formObj.breed
+                animaltype: 'cat',
+                breed: breed
             }
         }); 
     }

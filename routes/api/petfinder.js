@@ -58,9 +58,19 @@ const makePFQueryString = function(formObj) {
                 size = "&size=L";
                 return size;
             }
-        } else if (formObj.breed === 'cat') { 
+        } else if (formObj.animaltype === 'cat') { 
             console.log('cat chosen')
             console.log(formObj);
+            if (formObj.size === "small") { 
+                size = "&size=S";
+                return size;
+            } else if (formObj.size === "medium") { 
+                size = "&size=M";
+                return size;
+            } else { 
+                size = "&size=L";
+                return size;
+            }
         } else {
             console.log(`uh oh, a breed wasn't selected`);
         }

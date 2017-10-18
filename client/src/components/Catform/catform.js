@@ -1,9 +1,10 @@
 import React from "react";
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import "./Catform.css";
 
 const Catform = props => { 
 return(
-    <div>
+    <div className="div">
         <Form onSubmit={props.handleSubmit}>
             {/* GENDER */}
             <FormGroup>
@@ -56,11 +57,12 @@ return(
             </FormGroup>
             {/* ZIP */}
             <FormGroup>
-                <Label>Zip:</Label>
+                <Label>Please provide your home zip code to search for available cats in your area.</Label>
                 <Input type="text" name="zip" value={props.value} 
                 onChange={props.handleOptionChange} />
             </FormGroup>
-        <Button onSubmit={() => props.onSubmit} type='submit'>Submit </Button>
+        <Button className='button' onSubmit={() => props.onSubmit} color='warning' type='submit'>Submit </Button>
+
         </Form>  
     </div> 
     );

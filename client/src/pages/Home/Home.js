@@ -22,12 +22,12 @@ const Home = () =>
 					<Col></Col>
 					<Col>
 						<div className="bord-rad-2 disp-inlineblock marg-10">
-							<a href="/dog"><img src={dogIcon} className="icon" alt="Dog Icon" /></a>
+							<a href="/Dogform"><img src={dogIcon} className="icon" alt="Dog Icon" /></a>
 						</div>
 					</Col>
 					<Col>
 						<div className="bord-rad-2 disp-inlineblock marg-10">
-							<a href="/cat"><img src={catIcon} className="icon" alt="Cat Icon" /></a>
+							<a href="/Catform"><img src={catIcon} className="icon" alt="Cat Icon" /></a>
 						</div>
 						</Col>
 					<Col></Col>

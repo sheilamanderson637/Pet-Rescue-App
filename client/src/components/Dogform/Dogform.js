@@ -1,9 +1,10 @@
 import React from "react";
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import "./Dogform.css";
 
 const Dogform = props => { 
 return(
-    <div>
+    <div className="div">
         <Form onSubmit={props.handleSubmit}>
             {/* GENDER */}
             <FormGroup>
@@ -59,17 +60,17 @@ return(
                 <Label htmlFor="dogenergy">Do you want an energetic dog to play fetch with or would you like a calm dog to snuggle with on the sofa?</Label>
                 <Input type='select' value={props.value} onChange={props.handleOptionChange} name='dogenergy' className="form-control" >
                 <option></option>
-                <option value='highenergy'>Energetic</option>
-                <option value='calm'>Calm</option>
+                <option className='option' value='highenergy'>Energetic</option>
+                <option className='option' value='calm'>Calm</option>
                 </Input>
             </FormGroup>
             {/* ZIP */}
             <FormGroup>
-                <Label>Zip:</Label>
+                <Label>Please provide your home zip code to search for available dogs in your area.</Label>
                 <Input type="text" name="zip" value={props.value} 
                 onChange={props.handleOptionChange} />
             </FormGroup>
-        <Button onSubmit={() => props.onSubmit} type='submit'>Submit </Button>
+        <Button className='button' onSubmit={() => props.onSubmit} color='warning' type='submit'>Submit </Button>
         </Form>  
     </div> 
     );

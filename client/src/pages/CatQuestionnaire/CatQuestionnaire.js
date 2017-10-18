@@ -73,7 +73,7 @@ class CatQuestionnaire extends Component {
         console.log(obj);
         PetfinderAPI.catSearch(obj, breed)
         .then((res) => {
-            console.log(res.data.petfinder);
+            console.log(res.data.petfinder.pets.pet[0]);
             let ispetArr = Array.isArray(res.data.petfinder.pets.pet); 
             let pets = res.data.petfinder.pets.pet;
             this.makePetArray(res.data.petfinder.pets.pet);
@@ -99,6 +99,7 @@ class CatQuestionnaire extends Component {
             let newPetObj = { 
                 name:arr[i].name.$t,
                 age:arr[i].age.$t,
+                size:arr[i].size.$t,
                 animal:arr[i].animal.$t,
                 address:arr[i].contact.address1.$t,
                 city: arr[i].contact.city.$t,
@@ -121,7 +122,7 @@ class CatQuestionnaire extends Component {
                 newPetObj.image = 'no image available';
 
             } else {
-                newPetObj.image = arr[i].media.photos.photo[0].$t
+                newPetObj.image = arr[i].media.photos.photo[3].$t
             }
 
 
@@ -166,6 +167,14 @@ class CatQuestionnaire extends Component {
                 />
             </Container>
             <div>
+            {!this.state.isBreedfactVisible ? null : 
+                <Breedfact 
+                    breedName={this.state.breedName}
+                    breedDescription={this.state.breedDescription}
+                    breedHistory={this.state.breedHistory}
+                    breedTemperament={this.state.breedTemperament}  
+                />
+            }
                 <Results 
                     appResults={this.state.appResults}
                     petfinderResults={this.state.petfinderResults}

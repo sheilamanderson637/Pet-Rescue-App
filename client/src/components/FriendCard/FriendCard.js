@@ -21,12 +21,11 @@ const FriendCard = props => {
       </div>
       <div className="content">
       
-          <div className="animalName"><strong>{props.name}</strong></div>
-          <div><strong>Location:</strong> {props.location}</div>    
+          <div className="animalNameCenter"><strong>{props.name}</strong></div>
+          <div><strong>Location:</strong> {props.city}</div>    
           <div><strong>Age:</strong> {props.age}</div>
           <div><strong>Gender:</strong> {props.gender}</div>  
           <div><strong>Size:</strong> {props.size}</div>
-        
           <div className="details"> <Details details={props.details}></Details></div>
 
       </div>

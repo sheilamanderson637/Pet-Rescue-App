@@ -32,15 +32,15 @@ class Details extends React.Component {
               </div>
             
               <div className="row"  >    
-              <div className="col-md-3">
-                <div className="local"><strong>Location:</strong> {this.props.details.location}</div>
+              <div className="col-md-4">
+                <div className="local"><strong>Location:</strong> {this.props.details.city}</div>
                 <div><strong>Address:</strong> {this.props.details.address}</div>
                 <div><strong>Zip:</strong> {this.props.details.zip}</div>
                 <div><strong>Phone:</strong> {this.props.details.phone}</div>
                 <div><strong>Email:</strong> {this.props.details.email}</div>
               </div>              
-                <div className="col-md-9">
-                  <img className="map" src={"https://maps.googleapis.com/maps/api/staticmap?center=" + this.props.details.address + this.props.details.location + "&zoom=14&size=600x150&markers=color:blue&maptype=roadmap&key=AIzaSyAnEUAO6oaQZak1Bis0R6XCESEEmXa_6QQ"}/>
+                <div className="col-md-8">
+                  <img className="map" src={"https://maps.googleapis.com/maps/api/staticmap?center=" + this.props.details.address + this.props.details.city + "&zoom=14&size=600x150&markers=color:blue&maptype=roadmap&key=AIzaSyAnEUAO6oaQZak1Bis0R6XCESEEmXa_6QQ"}/>
                 </div>
               </div>
                 

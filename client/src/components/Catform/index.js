@@ -1,1 +1,1 @@
-export { default } from "./Catform";
+export { default } from "./catform";

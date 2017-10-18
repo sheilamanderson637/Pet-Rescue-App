@@ -1,5 +1,7 @@
 import React from 'react'; 
-import {Container, Jumbotron} from 'reactstrap';
+import {Container, Jumbotron, Card} from 'reactstrap';
+import "./Breedfact.css";
+
 
 const Breedfact = props => { 
     console.log('in breedfact');
@@ -7,12 +9,12 @@ const Breedfact = props => {
     return(
     <div style={{marginTop: 20}}>
     <Container>
-        <Jumbotron>
-            <h2>BREED NAME: {props.breedName}</h2>
-            <p className='lead'>DESCRIPTION: {props.breedDescription}</p>
+        <Jumbotron className="breedBox">
+            <h2 className="breedName">{props.breedName}</h2>
+            <p className='lead'>Description: {props.breedDescription}</p>
             <hr /> 
-            <p>TEMPERAMENT: {props.breedTemperament}</p>
-            <p>HISTORY: {props.breedHistory}</p>
+            <p>Temperament: {props.breedTemperament}</p>
+            <p>History: {props.breedHistory}</p>
         </Jumbotron>
     </Container>
     </div>

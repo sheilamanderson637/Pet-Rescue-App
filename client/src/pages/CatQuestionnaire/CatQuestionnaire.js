@@ -121,7 +121,7 @@ class CatQuestionnaire extends Component {
                 newPetObj.image = 'no image available';
 
             } else {
-                newPetObj.image = arr[i].media.photos.photo[0].$t
+                newPetObj.image = arr[i].media.photos.photo[3].$t
             }
 
 
@@ -177,23 +177,3 @@ class CatQuestionnaire extends Component {
 }
 
 export default CatQuestionnaire;
-
-// {this.state.petfinderResults.map(friend => (
-//     <FriendCard
-        
-//         id={friend.id}
-//         key={friend.id}
-//         name={friend.name}
-//         image={friend.image}
-//         gender={friend.gender}
-//         location={friend.location}
-//         age={friend.age}
-//         size={friend.size}
-//         description={friend.description}
-//         address={friend.address}
-//         zip={friend.zip}
-//         details={friend}
-//         phone={friend.phone}
-//         email={friend.email}
-//     />
-//     ))}

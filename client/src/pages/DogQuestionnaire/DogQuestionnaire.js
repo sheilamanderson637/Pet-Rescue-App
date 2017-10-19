@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { Container } from 'reactstrap';
 import Dogform from '../../components/Dogform';
-//import Wrapper from '../../components/Wrapper';
-// import FriendCard from '../../components/FriendCard';
 import PetfinderAPI from '../../utils/petfinderapi';
 import AppAPI from '../../utils/appapi';
 import Results from '../../components/Results';
 import Breedfact from '../../components/Breedfact';
+
 
 class DogQuestionnaire extends Component { 
     
@@ -26,7 +25,8 @@ class DogQuestionnaire extends Component {
             breedTemperament: '',           
             petfinderResults: [], 
             isBreedfactVisible: false,
-            isResultsVisible: false
+            isResultsVisible: false,
+            isFormVisible: true
         }
 
         this.handleChange = this.handleOptionChange.bind(this);
@@ -47,7 +47,6 @@ class DogQuestionnaire extends Component {
         this.setState({
             [name]: value
         });
-        // console.log(this.state);
       }; 
 
     getBreedMatch(matchkey) { 
@@ -65,7 +64,8 @@ class DogQuestionnaire extends Component {
             
                 this.getPetsToRescue(this.state, breed);
                 
-            }).catch(err => console.log(err));
+            }).catch(err => console.log(err)
+        );
     }  
 
     getPetsToRescue(obj, breed) { 
@@ -78,7 +78,10 @@ class DogQuestionnaire extends Component {
             this.makePetArray(res.data.petfinder.pets.pet);
             console.log('=== petfinder state ===');
             console.log(this.state.petfinderResults);
-            this.setState({isBreedfactVisible: true, isResultsVisible: true});
+            this.setState({
+                isBreedfactVisible: true, 
+                isResultsVisible: true, 
+                isFormVisible: false});
         }).catch((err) => console.log(err));
     }
 
@@ -110,7 +113,6 @@ class DogQuestionnaire extends Component {
                 id: arr[i].id.$t,
                 age:arr[i].age.$t,
                 gender: arr[i].sex.$t
-                // img: arr[i].media.photos.photo[0].$t
             }
             
             // need to check if certain object properties are emmpty or undefined
@@ -124,7 +126,6 @@ class DogQuestionnaire extends Component {
                 newPetObj.image = arr[i].media.photos.photo[3].$t
             }
 
-
             // need to add conditional state to address 2
             // sometimes includes .$t when filled, otherwise empty
             petArr.push(newPetObj);
@@ -136,10 +137,10 @@ class DogQuestionnaire extends Component {
     shouldComponentUpdate() { 
         // console.log('component should update if true')
         if (this.state.petfinderResults.length > 0 || this.state.breedName !== '') { 
-            // console.log('should update true');
+            console.log("true", this.state);
             return true
         } else { 
-            // console.log('should update false');
+            console.log('false', this.state);
             return false
         }
     } 
@@ -152,16 +153,20 @@ class DogQuestionnaire extends Component {
 
     componentDidupdate() { 
         console.log('component did update');
+        window.scrollTo(0, 0);
     }
 
     render() { 
        return(
         <div>
           <Container>  
+            {this.state.isFormVisible ? 
             <Dogform 
                 handleOptionChange={this.handleOptionChange} 
                 handleSubmit={this.handleSubmit}
                 />
+            : null}
+
             </Container>
             <div> 
             {!this.state.isBreedfactVisible ? null : 
@@ -182,27 +187,3 @@ class DogQuestionnaire extends Component {
 }
 
 export default DogQuestionnaire;
-
-
-// 
-
-
-// {this.state.petfinderResults.map(friend => (
-//     <FriendCard
-        
-//         id={friend.id}
-//         key={friend.id}
-//         name={friend.name}
-//         image={friend.image}
-//         gender={friend.gender}
-//         location={friend.location}
-//         age={friend.age}
-//         size={friend.size}
-//         description={friend.description}
-//         address={friend.address}
-//         zip={friend.zip}
-//         details={friend}
-//         phone={friend.phone}
-//         email={friend.email}
-//     />
-//     ))}

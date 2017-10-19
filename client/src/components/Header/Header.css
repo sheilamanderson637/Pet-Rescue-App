@@ -25,4 +25,9 @@
 .register {
 	/* margin: 0 0 10px 0; */
 	float: right;
+	padding-right: 30px;
+}
+
+.login-text {
+	font-size: 15px;
 }

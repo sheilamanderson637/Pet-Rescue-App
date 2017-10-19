@@ -20,8 +20,11 @@ const Footer = () => {
             <Col>
               <img src={FYellow}  className="logoF" alt="Finding Fido" />
             </Col>
-            <Col className="social">
-              dsfgfd
+            <Col>
+              <a href="http://www.instagram.com" target="_blank"><img src={Instagram}  className="social" alt="Instagram" /></a>
+              <a href="http://www.youtube.com" target="_blank"><img src={YouTube}  className="social" alt="YouTube" /></a>
+              <a href="http://www.twitter.com" target="_blank"><img src={Twitter}  className="tw-social" alt="Twitter" /></a>
+              <a href="http://www.facebook.com" target="_blank"><img src={Facebook}  className="social" alt="Facebook" /></a>
             </Col>
           </Row>
         </Container>

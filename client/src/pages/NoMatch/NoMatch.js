@@ -1,11 +1,12 @@
 import React from "react";
 import { Container, Row, Col, Jumbotron } from 'reactstrap';
+import "./NoMatch.css";
 
 const NoMatch = () =>
   <Container fluid>
     <Row>
       <Col size="md-12">
-        <Jumbotron></Jumbotron>
+        <Jumbotron className="doghouse"></Jumbotron>
         <Jumbotron>
           <h1>
             Oh no! It looks like we're in the dog house. 

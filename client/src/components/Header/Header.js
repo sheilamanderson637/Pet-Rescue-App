@@ -59,19 +59,19 @@ export default class Example extends React.Component {
                 <DropdownMenu className="drop-menu dropdown-menu-right">
                   <Form>
                     <FormGroup row>
-                      <Label for="email" sm={2}>Email</Label>
+                      <Label className="login-text" for="email" sm={2}>Email</Label>
                       <Col sm={10}>
-                        <Input type="email" name="email" id="exampleEmail" placeholder="email" />
+                        <Input className="login-text" type="email" name="email" id="exampleEmail" placeholder="email" />
                       </Col>
                     </FormGroup>
                     <FormGroup row>
-                      <Label for="password" sm={2}>Password</Label>
+                      <Label className="login-text" for="password" sm={2}>Password</Label>
                       <Col sm={10}>
                         <Input type="password" name="password" id="examplePassword" placeholder="password" />
                       </Col>
                     </FormGroup>
                     <div className="register">
-                      Register
+                    <a href="/registration">Register</a>
                     </div>
                     <FormGroup check row>
                       <Col sm={{ size: 10, offset: 2 }}>

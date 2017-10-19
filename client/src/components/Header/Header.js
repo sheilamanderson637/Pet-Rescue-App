@@ -52,6 +52,10 @@ export default class Example extends React.Component {
                 <NavLink href="/account" className="nav-link">ACCOUNT</NavLink>
               </NavItem>
 
+              <NavItem>
+                <NavLink href="/registration" className="nav-link">REGISTER</NavLink>
+              </NavItem>
+
               <NavDropdown className="nav" isOpen={this.state.dropdownOpen} toggle={this.loginToggle}>
                 <DropdownToggle nav caret className="nav-link">
                 LOGIN

@@ -4,7 +4,7 @@ import "./Dogform.css";
 
 const Dogform = props => { 
 return(
-    <div>
+    <div className="div">
         <Form onSubmit={props.handleSubmit}>
             {/* GENDER */}
             <FormGroup>
@@ -49,7 +49,7 @@ return(
             {/* SHEDDING */}
             <FormGroup>
                 <Label htmlFor="doghair">Are you looking for a dog that is a light shedder or would you love any dog regardless?</Label>
-                <Input type='select' value={props.value} onChange={props.handleOptionChange} name='doghair' color="warning" className="form-control" >
+                <Input type='select' value={props.value} onChange={props.handleOptionChange} name='doghair' className="form-control" >
                 <option></option>
                 <option value='light'>Light Shedder</option>
                 <option value='any'>No Preference</option>

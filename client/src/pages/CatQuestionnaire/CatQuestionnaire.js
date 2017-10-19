@@ -126,7 +126,7 @@ class CatQuestionnaire extends Component {
                 newPetObj.image = 'no image available';
 
             } else {
-                newPetObj.image = arr[i].media.photos.photo[0].$t
+                newPetObj.image = arr[i].media.photos.photo[3].$t
             }
 
 
